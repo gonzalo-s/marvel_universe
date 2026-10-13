@@ -12,28 +12,27 @@ import type { ResolvedGraph } from '@/lib/timeline';
 
 const shader = `
 uniform sampler2D fluidDensity;
-uniform sampler2D fluidDye;
+uniform vec3 smokeColor;
+uniform vec3 smokeHighlight;
 uniform float smokeIntensity;
 uniform float smokeOpacity;
 void mainImage(const in vec4 inputColor, const in vec2 uv, out vec4 outputColor) {
   float density = max(0., texture2D(fluidDensity, uv).b);
-  vec3 dye = max(vec3(0.), texture2D(fluidDye, uv).rgb);
-  vec3 tint = dye / max(max(dye.r, max(dye.g, dye.b)), .001);
-  float veil = min(.45, 1. - exp(-density * 2.5)) * smokeIntensity;
-  // Blend only the smoke contribution; keep the scene's own alpha intact.
-  vec3 smokeColor = inputColor.rgb + tint * veil * 1.1;
-  outputColor = vec4(mix(inputColor.rgb, smokeColor, smokeOpacity), inputColor.a);
+  float strength = 1. - exp(-density * 1.5);
+  vec3 tint = mix(smokeColor, smokeHighlight, smoothstep(.2, .85, strength));
+  float alpha = strength * smokeOpacity * smokeIntensity;
+  // Source-over transparency, matching the portfolio's density overlay.
+  outputColor = vec4(mix(inputColor.rgb, tint, alpha), inputColor.a);
 }`;
 
 class CosmicSmokeEffect extends Effect {
   constructor() {
     super('CosmicPointerSmoke', shader, { blendFunction: BlendFunction.NORMAL, uniforms: new Map<string, Uniform>([
-      ['fluidDensity', new Uniform(null)], ['fluidDye', new Uniform(null)], ['smokeIntensity', new Uniform(0)], ['smokeOpacity', new Uniform(0.4)],
+      ['fluidDensity', new Uniform(null)], ['smokeColor', new Uniform(new Color('#303651'))], ['smokeHighlight', new Uniform(new Color('#9bb4fa'))], ['smokeIntensity', new Uniform(0)], ['smokeOpacity', new Uniform(0.3)],
     ]) });
   }
   display(fluid: FluidSimulation | null, intensity: number) {
     this.uniforms.get('fluidDensity')!.value = fluid?.densityTexture ?? null;
-    this.uniforms.get('fluidDye')!.value = fluid?.dyeTexture ?? null;
     this.uniforms.get('smokeIntensity')!.value = intensity;
   }
 }
@@ -48,7 +47,7 @@ export function PointerFluid({ graph, selectedId, reducedMotion, tier }: {
   const effect = useMemo(() => new CosmicSmokeEffect(), []);
   const effectRef = useRef(effect);
   const simulation = useRef<FluidSimulation | null>(null);
-  const state = useRef({ activeUntil: 0, lastX: 0, lastY: 0, lastTime: 0, initialized: false, label: false });
+  const state = useRef({ activeUntil: 0, lastX: 0, lastY: 0, lastTime: 0, initialized: false });
   const colors = useMemo(() => ({ current: new Color('#798cde'), desired: new Color('#798cde'), base: new Color('#798cde'), accent: new Color() }), []);
   const scratch = useMemo(() => ({ viewport: new Vector4(), scissor: new Vector4() }), []);
 
@@ -58,12 +57,11 @@ export function PointerFluid({ graph, selectedId, reducedMotion, tier }: {
     if (reducedMotion || touchOnly) return;
     const fluid = new FluidSimulation(gl, {
       profile: tier === 'high' ? 'balanced' : 'performance',
-      pressureIterations: tier === 'high' ? 8 : 4,
-      densityDissipation: .97, dyeDissipation: .97, velocityDissipation: .975,
-      enableVorticity: true, curlStrength: 2.5, bfecc: false, reflectWalls: false,
-      splatRadius: .001, splatForce: 4,
+      pressureIterations: tier === 'high' ? 12 : 4,
+      densityDissipation: .96, dyeDissipation: .97, velocityDissipation: .975,
+      enableVorticity: true, curlStrength: 2.5, bfecc: false, reflectWalls: true,
+      splatRadius: .001, splatForce: 6,
     });
-    fluid.enableDye = true;
     const rect = gl.domElement.getBoundingClientRect();
     fluid.resize(Math.max(1, rect.width), Math.max(1, rect.height));
     simulation.current = fluid;
@@ -79,16 +77,9 @@ export function PointerFluid({ graph, selectedId, reducedMotion, tier }: {
       const dx = first ? 0 : Math.max(-80, Math.min(80, e.clientX - s.lastX));
       const dy = first ? 0 : Math.max(-80, Math.min(80, s.lastY - e.clientY));
       s.lastX = e.clientX; s.lastY = e.clientY; s.lastTime = now; s.initialized = true;
-      s.label = e.target instanceof Element && !!e.target.closest('.event-label, .node-target');
-      const speed = Math.min(1, Math.hypot(dx, dy) / 35);
       if (Math.abs(dx) + Math.abs(dy) < .25) return;
-      const color = colors.current;
       fluid.addSplat((e.clientX - bounds.left) / bounds.width, 1 - (e.clientY - bounds.top) / bounds.height,
-        dx * fluid.splatForce, dy * fluid.splatForce, {
-          radius: .0018 - speed * .0012,
-          color: [dx * fluid.splatForce, dy * fluid.splatForce, s.label ? .25 : .65],
-          dyeColor: [color.r * .3, color.g * .3, color.b * .3],
-        });
+        dx * fluid.splatForce, dy * fluid.splatForce);
       s.activeUntil = now + 3500;
     };
     const reset = () => { state.current.initialized = false; };
@@ -115,18 +106,18 @@ export function PointerFluid({ graph, selectedId, reducedMotion, tier }: {
     colors.desired.copy(colors.base);
     if (node) colors.desired.lerp(colors.accent.set(resolveNodeVisuals(node).accent), .7);
     colors.current.lerp(colors.desired, 1 - Math.exp(-delta * 4));
+    (effectRef.current.uniforms.get('smokeColor')!.value as Color).copy(colors.current);
     if (performance.now() > state.current.activeUntil) { effectRef.current.display(fluid, 0); return; }
     // The solver shares R3F's renderer; restore state before the composer renders.
     const target = gl.getRenderTarget(), autoClear = gl.autoClear, scissorTest = gl.getScissorTest();
     gl.getViewport(scratch.viewport); gl.getScissor(scratch.scissor);
     const decayScale = Math.max(1, Math.min(delta, 1) * 60);
-    fluid.densityDissipation = Math.pow(.97, decayScale);
-    fluid.dyeDissipation = fluid.densityDissipation;
+    fluid.densityDissipation = Math.pow(.96, decayScale);
     fluid.velocityDissipation = Math.pow(.975, decayScale);
     try { fluid.step(Math.min(delta, 1 / 60)); }
     finally { gl.setRenderTarget(target); gl.autoClear = autoClear; gl.setViewport(scratch.viewport); gl.setScissor(scratch.scissor); gl.setScissorTest(scissorTest); }
     const idleFade = Math.exp(-Math.max(0, performance.now() - state.current.lastTime - 200) / 1100);
-    effectRef.current.display(fluid, .65 * idleFade);
+    effectRef.current.display(fluid, idleFade);
   });
 
   return <primitive object={effect} dispose={null} />;
