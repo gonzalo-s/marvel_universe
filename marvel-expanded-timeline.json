@@ -1,0 +1,4409 @@
+{
+  "schemaVersion": "1.1.0",
+  "id": "mcu-infinity-saga-expanded",
+  "title": "Saga del Infinito: películas, viajes de Endgame y rama de Loki",
+  "language": "es",
+  "containsSpoilers": true,
+  "scope": {
+    "description": "24 películas: las 23 de la Saga del Infinito y Black Widow. Loki temporada 1 solo se incluye hasta su llegada a la TVA. Acontecimientos seleccionados; no es un catálogo exhaustivo de escenas.",
+    "worksIncluded": [
+      "avengers",
+      "thor-dark-world",
+      "thor-ragnarok",
+      "infinity-war",
+      "endgame",
+      "loki-s1",
+      "first-avenger",
+      "captain-marvel",
+      "iron-man",
+      "iron-man-2",
+      "incredible-hulk",
+      "thor",
+      "iron-man-3",
+      "winter-soldier",
+      "guardians",
+      "guardians-2",
+      "age-ultron",
+      "ant-man",
+      "civil-war",
+      "black-widow",
+      "black-panther",
+      "homecoming",
+      "doctor-strange",
+      "ant-man-wasp",
+      "far-from-home"
+    ],
+    "lastReviewed": "2026-10-08",
+    "excludedDetails": [
+      "Poscréditos de Black Widow",
+      "Vida de Steve con Peggy y su rama exacta",
+      "Entregas individuales de gemas fuera de pantalla",
+      "Continuación de Loki después de llegar a la TVA"
+    ]
+  },
+  "conventions": {
+    "ids": "IDs internos; los nombres visibles pueden cambiar.",
+    "edges": "Las conexiones son datos explícitos. Solo continuation y precedes definen orden local; time_travel puede retroceder en el calendario.",
+    "time": "year es tiempo narrativo, releaseYear es estreno. sequence ordena eventos seleccionados de un mismo carril visual; no sincroniza carriles paralelos. El orden de resúmenes es editorial.",
+    "layout": "Todas las posiciones y controlPoints son coordenadas absolutas. Los offsets de carril son guías, no traslaciones adicionales. La escala x es editorial, no proporcional al calendario.",
+    "branch": "La intervención se agrupa visualmente en el carril alternativo; el punto de divergencia registrado es la huida de Loki. No se afirma que cada viaje cree por sí solo una rama.",
+    "outsideTime": "La TVA no tiene año ni pertenece al carril cronológico terrestre.",
+    "evidence": "confirmed significa mostrado o respaldado por las fuentes indicadas, dentro del alcance. No trata las explicaciones de los Time Keepers como verdad universal.",
+    "displayOrder": "display_order organiza resúmenes de películas según el orden editorial de referencia; NO afirma que sus períodos sean disjuntos ni que una película cause la siguiente.",
+    "visitedPast": "Los carriles visited_past agrupan destinos de Endgame. No afirman una divergencia precisa ni que devolver las gemas borre todos los cambios.",
+    "dates": "time.status y time.note califican las fechas aproximadas. earliestYear/latestYear expresan rangos. year=null nunca se reemplaza por el año de estreno.",
+    "characters": "Lista de participantes seleccionados, no reparto completo. Thanos y Gamora de 2014 tienen IDs distintos de sus versiones principales.",
+    "scopeEnd": "endNodeId en visited_past significa último acontecimiento representado, no destrucción de ese destino."
+  },
+  "works": [
+    {
+      "id": "avengers",
+      "title": "The Avengers",
+      "type": "movie",
+      "releaseYear": 2012
+    },
+    {
+      "id": "thor-dark-world",
+      "title": "Thor: The Dark World",
+      "type": "movie",
+      "releaseYear": 2013
+    },
+    {
+      "id": "thor-ragnarok",
+      "title": "Thor: Ragnarok",
+      "type": "movie",
+      "releaseYear": 2017
+    },
+    {
+      "id": "infinity-war",
+      "title": "Avengers: Infinity War",
+      "type": "movie",
+      "releaseYear": 2018
+    },
+    {
+      "id": "endgame",
+      "title": "Avengers: Endgame",
+      "type": "movie",
+      "releaseYear": 2019
+    },
+    {
+      "id": "loki-s1",
+      "title": "Loki",
+      "type": "series_season",
+      "season": 1,
+      "releaseYear": 2021
+    },
+    {
+      "id": "first-avenger",
+      "title": "Captain America: The First Avenger",
+      "type": "movie",
+      "releaseYear": 2011
+    },
+    {
+      "id": "captain-marvel",
+      "title": "Captain Marvel",
+      "type": "movie",
+      "releaseYear": 2019
+    },
+    {
+      "id": "iron-man",
+      "title": "Iron Man",
+      "type": "movie",
+      "releaseYear": 2008
+    },
+    {
+      "id": "iron-man-2",
+      "title": "Iron Man 2",
+      "type": "movie",
+      "releaseYear": 2010
+    },
+    {
+      "id": "incredible-hulk",
+      "title": "The Incredible Hulk",
+      "type": "movie",
+      "releaseYear": 2008
+    },
+    {
+      "id": "thor",
+      "title": "Thor",
+      "type": "movie",
+      "releaseYear": 2011
+    },
+    {
+      "id": "iron-man-3",
+      "title": "Iron Man 3",
+      "type": "movie",
+      "releaseYear": 2013
+    },
+    {
+      "id": "winter-soldier",
+      "title": "Captain America: The Winter Soldier",
+      "type": "movie",
+      "releaseYear": 2014
+    },
+    {
+      "id": "guardians",
+      "title": "Guardians of the Galaxy",
+      "type": "movie",
+      "releaseYear": 2014
+    },
+    {
+      "id": "guardians-2",
+      "title": "Guardians of the Galaxy Vol. 2",
+      "type": "movie",
+      "releaseYear": 2017
+    },
+    {
+      "id": "age-ultron",
+      "title": "Avengers: Age of Ultron",
+      "type": "movie",
+      "releaseYear": 2015
+    },
+    {
+      "id": "ant-man",
+      "title": "Ant-Man",
+      "type": "movie",
+      "releaseYear": 2015
+    },
+    {
+      "id": "civil-war",
+      "title": "Captain America: Civil War",
+      "type": "movie",
+      "releaseYear": 2016
+    },
+    {
+      "id": "black-widow",
+      "title": "Black Widow",
+      "type": "movie",
+      "releaseYear": 2021
+    },
+    {
+      "id": "black-panther",
+      "title": "Black Panther",
+      "type": "movie",
+      "releaseYear": 2018
+    },
+    {
+      "id": "homecoming",
+      "title": "Spider-Man: Homecoming",
+      "type": "movie",
+      "releaseYear": 2017
+    },
+    {
+      "id": "doctor-strange",
+      "title": "Doctor Strange",
+      "type": "movie",
+      "releaseYear": 2016
+    },
+    {
+      "id": "ant-man-wasp",
+      "title": "Ant-Man and the Wasp",
+      "type": "movie",
+      "releaseYear": 2018
+    },
+    {
+      "id": "far-from-home",
+      "title": "Spider-Man: Far From Home",
+      "type": "movie",
+      "releaseYear": 2019
+    }
+  ],
+  "universes": [
+    {
+      "id": "mcu-main",
+      "title": "Realidad principal del MCU",
+      "externalIdentifiers": [
+        {
+          "label": "Tierra-616",
+          "scope": "Denominación cinematográfica; no identifica la Tierra-616 de los cómics."
+        }
+      ]
+    }
+  ],
+  "timelines": [
+    {
+      "id": "main",
+      "universeId": "mcu-main",
+      "title": "Historia principal",
+      "kind": "primary",
+      "parentTimelineId": null,
+      "divergenceNodeId": null,
+      "endNodeId": null,
+      "status": "active_within_scope",
+      "evidenceIds": []
+    },
+    {
+      "id": "loki-branch",
+      "universeId": "mcu-main",
+      "title": "Rama de Loki que escapa",
+      "kind": "branch",
+      "parentTimelineId": "main",
+      "divergenceNodeId": "escape",
+      "endNodeId": "reset",
+      "status": "reset_within_scope",
+      "evidenceIds": [
+        "official-loki-ep1"
+      ]
+    },
+    {
+      "id": "visited-1970",
+      "universeId": "mcu-main",
+      "title": "Pasado visitado: 1970",
+      "kind": "visited_past",
+      "parentTimelineId": null,
+      "divergenceNodeId": null,
+      "endNodeId": null,
+      "status": "outcome_not_fully_shown",
+      "referenceTimelineId": "main",
+      "evidenceIds": [
+        "film-endgame"
+      ],
+      "note": "Destino del viaje. Origen exacto de rama y estado posterior no fijados."
+    },
+    {
+      "id": "visited-2013",
+      "universeId": "mcu-main",
+      "title": "Pasado visitado: 2013",
+      "kind": "visited_past",
+      "parentTimelineId": null,
+      "divergenceNodeId": null,
+      "endNodeId": null,
+      "status": "outcome_not_fully_shown",
+      "referenceTimelineId": "main",
+      "evidenceIds": [
+        "film-endgame"
+      ],
+      "note": "Destino del viaje. Origen exacto de rama y estado posterior no fijados."
+    },
+    {
+      "id": "visited-2014",
+      "universeId": "mcu-main",
+      "title": "Pasado visitado: 2014",
+      "kind": "visited_past",
+      "parentTimelineId": null,
+      "divergenceNodeId": null,
+      "endNodeId": null,
+      "status": "outcome_not_fully_shown",
+      "referenceTimelineId": "main",
+      "evidenceIds": [
+        "film-endgame"
+      ],
+      "note": "Destino del viaje. Origen exacto de rama y estado posterior no fijados."
+    }
+  ],
+  "realms": [
+    {
+      "id": "tva",
+      "title": "TVA",
+      "timeDomain": "outside_time",
+      "universeId": null,
+      "timelineId": null,
+      "evidenceIds": [
+        "official-loki-ep1"
+      ]
+    }
+  ],
+  "characters": [
+    {
+      "id": "loki-main",
+      "name": "Loki",
+      "variantGroupId": "loki",
+      "originTimelineId": "main",
+      "description": "Versión que sigue su recorrido hasta Infinity War."
+    },
+    {
+      "id": "loki-variant",
+      "name": "Loki de la rama",
+      "variantGroupId": "loki",
+      "originTimelineId": "loki-branch",
+      "description": "Comparte el pasado de Loki hasta la divergencia; conserva su existencia tras la intervención de la TVA."
+    },
+    {
+      "id": "tony",
+      "name": "Tony Stark",
+      "variantGroupId": "tony",
+      "originTimelineId": "main"
+    },
+    {
+      "id": "steve",
+      "name": "Steve Rogers",
+      "variantGroupId": "steve",
+      "originTimelineId": "main"
+    },
+    {
+      "id": "bruce",
+      "name": "Bruce Banner",
+      "variantGroupId": "bruce",
+      "originTimelineId": "main"
+    },
+    {
+      "id": "scott",
+      "name": "Scott Lang",
+      "variantGroupId": "scott",
+      "originTimelineId": "main"
+    },
+    {
+      "id": "thor",
+      "name": "Thor",
+      "variantGroupId": "thor",
+      "originTimelineId": "main"
+    },
+    {
+      "id": "thanos",
+      "name": "Thanos",
+      "variantGroupId": "thanos",
+      "originTimelineId": "main"
+    },
+    {
+      "id": "b15",
+      "name": "Hunter B-15",
+      "variantGroupId": "b15",
+      "originTimelineId": null
+    },
+    {
+      "id": "carol",
+      "name": "Carol Danvers",
+      "variantGroupId": "carol",
+      "originTimelineId": "main"
+    },
+    {
+      "id": "natasha",
+      "name": "Natasha Romanoff",
+      "variantGroupId": "natasha",
+      "originTimelineId": "main"
+    },
+    {
+      "id": "clint",
+      "name": "Clint Barton",
+      "variantGroupId": "clint",
+      "originTimelineId": "main"
+    },
+    {
+      "id": "bucky",
+      "name": "Bucky Barnes",
+      "variantGroupId": "bucky",
+      "originTimelineId": "main"
+    },
+    {
+      "id": "peter",
+      "name": "Peter Parker",
+      "variantGroupId": "peter",
+      "originTimelineId": "main"
+    },
+    {
+      "id": "quill",
+      "name": "Peter Quill",
+      "variantGroupId": "quill",
+      "originTimelineId": "main"
+    },
+    {
+      "id": "gamora-main",
+      "name": "Gamora principal",
+      "variantGroupId": "gamora",
+      "originTimelineId": "main"
+    },
+    {
+      "id": "rocket",
+      "name": "Rocket",
+      "variantGroupId": "rocket",
+      "originTimelineId": "main"
+    },
+    {
+      "id": "nebula-main",
+      "name": "Nebula principal",
+      "variantGroupId": "nebula",
+      "originTimelineId": "main"
+    },
+    {
+      "id": "rhodey",
+      "name": "James Rhodes",
+      "variantGroupId": "rhodey",
+      "originTimelineId": "main"
+    },
+    {
+      "id": "yelena",
+      "name": "Yelena Belova",
+      "variantGroupId": "yelena",
+      "originTimelineId": "main"
+    },
+    {
+      "id": "tchalla",
+      "name": "T’Challa",
+      "variantGroupId": "tchalla",
+      "originTimelineId": "main"
+    },
+    {
+      "id": "strange",
+      "name": "Stephen Strange",
+      "variantGroupId": "strange",
+      "originTimelineId": "main"
+    },
+    {
+      "id": "hope",
+      "name": "Hope van Dyne",
+      "variantGroupId": "hope",
+      "originTimelineId": "main"
+    },
+    {
+      "id": "thanos-2014",
+      "name": "Thanos del pasado visitado de 2014",
+      "variantGroupId": "thanos",
+      "originTimelineId": "visited-2014"
+    },
+    {
+      "id": "gamora-2014",
+      "name": "Gamora del pasado visitado de 2014",
+      "variantGroupId": "gamora",
+      "originTimelineId": "visited-2014"
+    },
+    {
+      "id": "nebula-2014",
+      "name": "Nebula del pasado visitado de 2014",
+      "variantGroupId": "nebula",
+      "originTimelineId": "visited-2014"
+    }
+  ],
+  "sources": [
+    {
+      "id": "official-loki-ep1",
+      "kind": "official_recap",
+      "title": "Marvel: Loki, Episode 1 Event Report",
+      "url": "https://www.marvel.com/articles/tv-shows/loki-episode-1-event-report-recap?linkId=121151330",
+      "locator": "Burdened with Glorious Purpose; A God Does Not Plead; Live Within Your Set Path",
+      "note": "Identifica huida, Gobi, arresto, reset y TVA fuera del tiempo."
+    },
+    {
+      "id": "film-avengers",
+      "kind": "primary_work",
+      "workId": "avengers",
+      "title": "Película: avengers",
+      "locator": "Batalla de Nueva York y captura de Loki"
+    },
+    {
+      "id": "film-thor-dark-world",
+      "kind": "primary_work",
+      "workId": "thor-dark-world",
+      "title": "Película: thor-dark-world",
+      "locator": "Recorrido de Loki tras su encarcelamiento"
+    },
+    {
+      "id": "film-thor-ragnarok",
+      "kind": "primary_work",
+      "workId": "thor-ragnarok",
+      "title": "Película: thor-ragnarok",
+      "locator": "Loki y Thor escapan de Asgard"
+    },
+    {
+      "id": "film-infinity-war",
+      "kind": "primary_work",
+      "workId": "infinity-war",
+      "title": "Película: infinity-war",
+      "locator": "Ataque de Thanos a la nave asgardiana"
+    },
+    {
+      "id": "film-endgame",
+      "kind": "primary_work",
+      "workId": "endgame",
+      "title": "Película: endgame",
+      "locator": "Salto de cinco años y misión en Nueva York de 2012"
+    },
+    {
+      "id": "timeline-editorial",
+      "kind": "secondary_timeline",
+      "title": "The Direct: orden de películas de Disney+",
+      "url": "https://thedirect.com/article/mcu-timeline-disney-plus-movie",
+      "locator": "Lista MCU Movie Timeline",
+      "note": "Fuente de orden editorial, no prueba de fechas exactas."
+    },
+    {
+      "id": "timeline-dates",
+      "kind": "secondary_timeline",
+      "title": "MCU timeline: Infinity Saga",
+      "url": "https://en.wikipedia.org/wiki/Marvel_Cinematic_Universe_timeline",
+      "locator": "The Infinity Saga; codifying attempts",
+      "note": "Distingue cronologías revisadas y períodos superpuestos."
+    },
+    {
+      "id": "film-first-avenger",
+      "kind": "primary_work",
+      "workId": "first-avenger",
+      "title": "Captain America: The First Avenger",
+      "locator": "Historia principal; resumen de acontecimientos seleccionados"
+    },
+    {
+      "id": "film-captain-marvel",
+      "kind": "primary_work",
+      "workId": "captain-marvel",
+      "title": "Captain Marvel",
+      "locator": "Historia principal; resumen de acontecimientos seleccionados"
+    },
+    {
+      "id": "film-iron-man",
+      "kind": "primary_work",
+      "workId": "iron-man",
+      "title": "Iron Man",
+      "locator": "Historia principal; resumen de acontecimientos seleccionados"
+    },
+    {
+      "id": "film-iron-man-2",
+      "kind": "primary_work",
+      "workId": "iron-man-2",
+      "title": "Iron Man 2",
+      "locator": "Historia principal; resumen de acontecimientos seleccionados"
+    },
+    {
+      "id": "film-incredible-hulk",
+      "kind": "primary_work",
+      "workId": "incredible-hulk",
+      "title": "The Incredible Hulk",
+      "locator": "Historia principal; resumen de acontecimientos seleccionados"
+    },
+    {
+      "id": "film-thor",
+      "kind": "primary_work",
+      "workId": "thor",
+      "title": "Thor",
+      "locator": "Historia principal; resumen de acontecimientos seleccionados"
+    },
+    {
+      "id": "film-iron-man-3",
+      "kind": "primary_work",
+      "workId": "iron-man-3",
+      "title": "Iron Man 3",
+      "locator": "Historia principal; resumen de acontecimientos seleccionados"
+    },
+    {
+      "id": "film-winter-soldier",
+      "kind": "primary_work",
+      "workId": "winter-soldier",
+      "title": "Captain America: The Winter Soldier",
+      "locator": "Historia principal; resumen de acontecimientos seleccionados"
+    },
+    {
+      "id": "film-guardians",
+      "kind": "primary_work",
+      "workId": "guardians",
+      "title": "Guardians of the Galaxy",
+      "locator": "Historia principal; resumen de acontecimientos seleccionados"
+    },
+    {
+      "id": "film-guardians-2",
+      "kind": "primary_work",
+      "workId": "guardians-2",
+      "title": "Guardians of the Galaxy Vol. 2",
+      "locator": "Historia principal; resumen de acontecimientos seleccionados"
+    },
+    {
+      "id": "film-age-ultron",
+      "kind": "primary_work",
+      "workId": "age-ultron",
+      "title": "Avengers: Age of Ultron",
+      "locator": "Historia principal; resumen de acontecimientos seleccionados"
+    },
+    {
+      "id": "film-ant-man",
+      "kind": "primary_work",
+      "workId": "ant-man",
+      "title": "Ant-Man",
+      "locator": "Historia principal; resumen de acontecimientos seleccionados"
+    },
+    {
+      "id": "film-civil-war",
+      "kind": "primary_work",
+      "workId": "civil-war",
+      "title": "Captain America: Civil War",
+      "locator": "Historia principal; resumen de acontecimientos seleccionados"
+    },
+    {
+      "id": "film-black-widow",
+      "kind": "primary_work",
+      "workId": "black-widow",
+      "title": "Black Widow",
+      "locator": "Historia principal; resumen de acontecimientos seleccionados"
+    },
+    {
+      "id": "film-black-panther",
+      "kind": "primary_work",
+      "workId": "black-panther",
+      "title": "Black Panther",
+      "locator": "Historia principal; resumen de acontecimientos seleccionados"
+    },
+    {
+      "id": "film-homecoming",
+      "kind": "primary_work",
+      "workId": "homecoming",
+      "title": "Spider-Man: Homecoming",
+      "locator": "Historia principal; resumen de acontecimientos seleccionados"
+    },
+    {
+      "id": "film-doctor-strange",
+      "kind": "primary_work",
+      "workId": "doctor-strange",
+      "title": "Doctor Strange",
+      "locator": "Historia principal; resumen de acontecimientos seleccionados"
+    },
+    {
+      "id": "film-ant-man-wasp",
+      "kind": "primary_work",
+      "workId": "ant-man-wasp",
+      "title": "Ant-Man and the Wasp",
+      "locator": "Historia principal; resumen de acontecimientos seleccionados"
+    },
+    {
+      "id": "film-far-from-home",
+      "kind": "primary_work",
+      "workId": "far-from-home",
+      "title": "Spider-Man: Far From Home",
+      "locator": "Historia principal; resumen de acontecimientos seleccionados"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "capture",
+      "type": "event",
+      "title": "Loki es capturado en Nueva York",
+      "description": "Punto de referencia del pasado compartido; desde aquí el mapa compara el recorrido principal y la intervención mostrada en Endgame.",
+      "timelineId": "main",
+      "realmId": null,
+      "time": {
+        "domain": "calendar",
+        "year": 2012,
+        "precision": "year",
+        "sequence": 70,
+        "earliestYear": 2012,
+        "latestYear": 2012,
+        "status": "approximate",
+        "evidenceIds": [
+          "film-avengers",
+          "timeline-dates"
+        ]
+      },
+      "participants": [
+        "loki-main",
+        "thor"
+      ],
+      "status": "confirmed",
+      "evidenceIds": [
+        "film-avengers"
+      ],
+      "presentation": {
+        "laneId": "lane-main",
+        "position": [
+          18,
+          0,
+          0
+        ],
+        "displayOrder": 7
+      }
+    },
+    {
+      "id": "dark-world",
+      "type": "event",
+      "title": "Loki: The Dark World",
+      "description": "Continúa la historia de Loki tras Nueva York.",
+      "timelineId": "main",
+      "realmId": null,
+      "time": {
+        "domain": "calendar",
+        "year": 2013,
+        "precision": "year",
+        "sequence": 80,
+        "earliestYear": 2013,
+        "latestYear": 2013,
+        "status": "approximate",
+        "evidenceIds": [
+          "film-thor-dark-world",
+          "timeline-dates"
+        ]
+      },
+      "participants": [
+        "loki-main",
+        "thor"
+      ],
+      "status": "confirmed",
+      "evidenceIds": [
+        "film-thor-dark-world"
+      ],
+      "presentation": {
+        "laneId": "lane-main",
+        "position": [
+          21,
+          0,
+          0
+        ],
+        "displayOrder": 8
+      }
+    },
+    {
+      "id": "ragnarok",
+      "type": "event",
+      "title": "Loki: Ragnarok",
+      "description": "Loki participa en la salida de Asgard y viaja con los supervivientes.",
+      "timelineId": "main",
+      "realmId": null,
+      "time": {
+        "domain": "calendar",
+        "year": 2017,
+        "precision": "year",
+        "sequence": 200,
+        "earliestYear": 2017,
+        "latestYear": 2017,
+        "status": "approximate",
+        "evidenceIds": [
+          "film-thor-ragnarok",
+          "timeline-dates"
+        ]
+      },
+      "participants": [
+        "loki-main",
+        "thor"
+      ],
+      "status": "confirmed",
+      "evidenceIds": [
+        "film-thor-ragnarok"
+      ],
+      "presentation": {
+        "laneId": "lane-main",
+        "position": [
+          57,
+          0,
+          0
+        ],
+        "displayOrder": 20
+      }
+    },
+    {
+      "id": "main-death",
+      "type": "event",
+      "title": "Loki muere ante Thanos",
+      "description": "El Loki principal muere durante el ataque inicial de Infinity War.",
+      "timelineId": "main",
+      "realmId": null,
+      "time": {
+        "domain": "calendar",
+        "year": 2018,
+        "precision": "year",
+        "sequence": 220,
+        "earliestYear": 2018,
+        "latestYear": 2018,
+        "status": "approximate",
+        "evidenceIds": [
+          "film-infinity-war",
+          "timeline-dates"
+        ]
+      },
+      "participants": [
+        "loki-main",
+        "thor",
+        "thanos"
+      ],
+      "status": "confirmed",
+      "evidenceIds": [
+        "film-infinity-war"
+      ],
+      "presentation": {
+        "laneId": "lane-main",
+        "position": [
+          63,
+          0,
+          0
+        ],
+        "displayOrder": 22
+      }
+    },
+    {
+      "id": "departure",
+      "type": "event",
+      "title": "Endgame: partida desde 2023",
+      "description": "Los Avengers emprenden la misión temporal; un equipo visita Nueva York en 2012.",
+      "timelineId": "main",
+      "realmId": null,
+      "time": {
+        "domain": "calendar",
+        "year": 2023,
+        "precision": "year",
+        "sequence": 230,
+        "earliestYear": 2018,
+        "latestYear": 2023,
+        "status": "approximate",
+        "evidenceIds": [
+          "film-endgame",
+          "timeline-dates"
+        ],
+        "note": "Rango del resumen o fecha revisada entre fuentes; no equivale a una fecha exacta."
+      },
+      "participants": [
+        "tony",
+        "steve",
+        "bruce",
+        "scott"
+      ],
+      "status": "confirmed",
+      "evidenceIds": [
+        "film-endgame"
+      ],
+      "presentation": {
+        "laneId": "lane-main",
+        "position": [
+          66,
+          0,
+          0
+        ],
+        "displayOrder": 23
+      }
+    },
+    {
+      "id": "intervention",
+      "type": "event",
+      "title": "Los viajeros intervienen en 2012",
+      "description": "La misión del Tesseract sale mal. Este segmento se agrupa en el carril de la rama para simplificar la representación.",
+      "timelineId": "loki-branch",
+      "realmId": null,
+      "time": {
+        "domain": "calendar",
+        "year": 2012,
+        "precision": "year",
+        "sequence": 1
+      },
+      "participants": [
+        "tony",
+        "steve",
+        "bruce",
+        "scott",
+        "loki-variant"
+      ],
+      "status": "confirmed",
+      "evidenceIds": [
+        "film-endgame"
+      ],
+      "presentation": {
+        "laneId": "lane-branch",
+        "position": [
+          18,
+          10,
+          0
+        ]
+      }
+    },
+    {
+      "id": "escape",
+      "type": "event",
+      "title": "Loki toma el Tesseract y escapa",
+      "description": "Punto de divergencia que la TVA atribuye a la huida de Loki.",
+      "timelineId": "loki-branch",
+      "realmId": null,
+      "time": {
+        "domain": "calendar",
+        "year": 2012,
+        "precision": "year",
+        "sequence": 2
+      },
+      "participants": [
+        "loki-variant"
+      ],
+      "status": "confirmed",
+      "evidenceIds": [
+        "film-endgame",
+        "official-loki-ep1"
+      ],
+      "presentation": {
+        "laneId": "lane-branch",
+        "position": [
+          21,
+          10,
+          0
+        ]
+      }
+    },
+    {
+      "id": "gobi",
+      "type": "event",
+      "title": "Loki llega al desierto de Gobi",
+      "description": "El Tesseract lo lleva a otra ubicación, no a otro año.",
+      "timelineId": "loki-branch",
+      "realmId": null,
+      "time": {
+        "domain": "calendar",
+        "year": 2012,
+        "precision": "year",
+        "sequence": 3
+      },
+      "participants": [
+        "loki-variant"
+      ],
+      "status": "confirmed",
+      "evidenceIds": [
+        "official-loki-ep1"
+      ],
+      "presentation": {
+        "laneId": "lane-branch",
+        "position": [
+          24,
+          10,
+          0
+        ]
+      }
+    },
+    {
+      "id": "arrest",
+      "type": "event",
+      "title": "La TVA detiene a Loki",
+      "description": "Hunter B-15 y su equipo arrestan a la variante.",
+      "timelineId": "loki-branch",
+      "realmId": null,
+      "time": {
+        "domain": "calendar",
+        "year": 2012,
+        "precision": "year",
+        "sequence": 4
+      },
+      "participants": [
+        "loki-variant",
+        "b15"
+      ],
+      "status": "confirmed",
+      "evidenceIds": [
+        "official-loki-ep1"
+      ],
+      "presentation": {
+        "laneId": "lane-branch",
+        "position": [
+          27,
+          10,
+          0
+        ]
+      }
+    },
+    {
+      "id": "reset",
+      "type": "event",
+      "title": "La TVA resetea la rama",
+      "description": "El equipo interviene sobre la rama. Este caso termina aquí su representación de esa línea.",
+      "timelineId": "loki-branch",
+      "realmId": null,
+      "time": {
+        "domain": "calendar",
+        "year": 2012,
+        "precision": "year",
+        "sequence": 5
+      },
+      "participants": [
+        "b15"
+      ],
+      "status": "confirmed",
+      "evidenceIds": [
+        "official-loki-ep1"
+      ],
+      "presentation": {
+        "laneId": "lane-branch",
+        "position": [
+          30,
+          10,
+          0
+        ]
+      }
+    },
+    {
+      "id": "tva-arrival",
+      "type": "event",
+      "title": "La variante llega a la TVA",
+      "description": "Loki queda fuera del calendario terrestre. El mapa no fija su llegada respecto de los años de la línea principal.",
+      "timelineId": null,
+      "realmId": "tva",
+      "time": {
+        "domain": "outside_time",
+        "year": null,
+        "precision": "not_applicable",
+        "sequence": 1
+      },
+      "participants": [
+        "loki-variant",
+        "b15"
+      ],
+      "status": "confirmed",
+      "evidenceIds": [
+        "official-loki-ep1"
+      ],
+      "presentation": {
+        "laneId": "lane-tva",
+        "position": [
+          27,
+          16,
+          0
+        ]
+      }
+    },
+    {
+      "id": "film-event-first-avenger",
+      "type": "event",
+      "title": "Captain America: The First Avenger",
+      "description": "Steve recibe el suero y combate a HYDRA durante la guerra.",
+      "timelineId": "main",
+      "realmId": null,
+      "time": {
+        "domain": "calendar",
+        "year": null,
+        "precision": "range",
+        "sequence": 10,
+        "earliestYear": 1943,
+        "latestYear": 1945,
+        "status": "approximate",
+        "evidenceIds": [
+          "film-first-avenger",
+          "timeline-dates"
+        ],
+        "note": "Rango del resumen o fecha revisada entre fuentes; no equivale a una fecha exacta."
+      },
+      "participants": [
+        "steve"
+      ],
+      "status": "confirmed",
+      "evidenceIds": [
+        "film-first-avenger"
+      ],
+      "presentation": {
+        "laneId": "lane-main",
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "displayOrder": 1
+      }
+    },
+    {
+      "id": "film-event-captain-marvel",
+      "type": "event",
+      "title": "Captain Marvel",
+      "description": "Carol descubre su pasado y enfrenta el conflicto Kree/Skrull.",
+      "timelineId": "main",
+      "realmId": null,
+      "time": {
+        "domain": "calendar",
+        "year": 1995,
+        "precision": "year",
+        "sequence": 20,
+        "earliestYear": 1995,
+        "latestYear": 1995,
+        "status": "approximate",
+        "evidenceIds": [
+          "film-captain-marvel",
+          "timeline-dates"
+        ]
+      },
+      "participants": [
+        "carol"
+      ],
+      "status": "confirmed",
+      "evidenceIds": [
+        "film-captain-marvel"
+      ],
+      "presentation": {
+        "laneId": "lane-main",
+        "position": [
+          3,
+          0,
+          0
+        ],
+        "displayOrder": 2
+      }
+    },
+    {
+      "id": "film-event-iron-man",
+      "type": "event",
+      "title": "Iron Man",
+      "description": "Tony construye su armadura y revela su identidad.",
+      "timelineId": "main",
+      "realmId": null,
+      "time": {
+        "domain": "calendar",
+        "year": null,
+        "precision": "range",
+        "sequence": 30,
+        "earliestYear": 2008,
+        "latestYear": 2010,
+        "status": "approximate",
+        "evidenceIds": [
+          "film-iron-man",
+          "timeline-dates"
+        ],
+        "note": "Rango del resumen o fecha revisada entre fuentes; no equivale a una fecha exacta."
+      },
+      "participants": [
+        "tony"
+      ],
+      "status": "confirmed",
+      "evidenceIds": [
+        "film-iron-man"
+      ],
+      "presentation": {
+        "laneId": "lane-main",
+        "position": [
+          6,
+          0,
+          0
+        ],
+        "displayOrder": 3
+      }
+    },
+    {
+      "id": "film-event-iron-man-2",
+      "type": "event",
+      "title": "Iron Man 2",
+      "description": "Tony enfrenta a Vanko durante la etapa conocida como Fury’s Big Week.",
+      "timelineId": "main",
+      "realmId": null,
+      "time": {
+        "domain": "calendar",
+        "year": null,
+        "precision": "range",
+        "sequence": 40,
+        "earliestYear": 2010,
+        "latestYear": 2011,
+        "status": "approximate",
+        "evidenceIds": [
+          "film-iron-man-2",
+          "timeline-dates"
+        ],
+        "note": "Rango del resumen o fecha revisada entre fuentes; no equivale a una fecha exacta."
+      },
+      "participants": [
+        "tony"
+      ],
+      "status": "confirmed",
+      "evidenceIds": [
+        "film-iron-man-2"
+      ],
+      "presentation": {
+        "laneId": "lane-main",
+        "position": [
+          9,
+          0,
+          0
+        ],
+        "displayOrder": 4
+      }
+    },
+    {
+      "id": "film-event-incredible-hulk",
+      "type": "event",
+      "title": "The Incredible Hulk",
+      "description": "Bruce enfrenta a Abomination; su historia se superpone con Iron Man 2 y Thor.",
+      "timelineId": "main",
+      "realmId": null,
+      "time": {
+        "domain": "calendar",
+        "year": null,
+        "precision": "range",
+        "sequence": 50,
+        "earliestYear": 2010,
+        "latestYear": 2011,
+        "status": "approximate",
+        "evidenceIds": [
+          "film-incredible-hulk",
+          "timeline-dates"
+        ],
+        "note": "Rango del resumen o fecha revisada entre fuentes; no equivale a una fecha exacta."
+      },
+      "participants": [
+        "bruce"
+      ],
+      "status": "confirmed",
+      "evidenceIds": [
+        "film-incredible-hulk"
+      ],
+      "presentation": {
+        "laneId": "lane-main",
+        "position": [
+          12,
+          0,
+          0
+        ],
+        "displayOrder": 5
+      }
+    },
+    {
+      "id": "film-event-thor",
+      "type": "event",
+      "title": "Thor",
+      "description": "Thor es desterrado a la Tierra.",
+      "timelineId": "main",
+      "realmId": null,
+      "time": {
+        "domain": "calendar",
+        "year": null,
+        "precision": "range",
+        "sequence": 60,
+        "earliestYear": 2010,
+        "latestYear": 2011,
+        "status": "approximate",
+        "evidenceIds": [
+          "film-thor",
+          "timeline-dates"
+        ],
+        "note": "Rango del resumen o fecha revisada entre fuentes; no equivale a una fecha exacta."
+      },
+      "participants": [
+        "thor",
+        "loki-main"
+      ],
+      "status": "confirmed",
+      "evidenceIds": [
+        "film-thor"
+      ],
+      "presentation": {
+        "laneId": "lane-main",
+        "position": [
+          15,
+          0,
+          0
+        ],
+        "displayOrder": 6
+      }
+    },
+    {
+      "id": "film-event-iron-man-3",
+      "type": "event",
+      "title": "Iron Man 3",
+      "description": "Tony enfrenta a Killian tras la batalla de Nueva York; la fecha ha variado entre cronologías.",
+      "timelineId": "main",
+      "realmId": null,
+      "time": {
+        "domain": "calendar",
+        "year": null,
+        "precision": "range",
+        "sequence": 90,
+        "earliestYear": 2012,
+        "latestYear": 2013,
+        "status": "approximate",
+        "evidenceIds": [
+          "film-iron-man-3",
+          "timeline-dates"
+        ],
+        "note": "Rango del resumen o fecha revisada entre fuentes; no equivale a una fecha exacta."
+      },
+      "participants": [
+        "tony"
+      ],
+      "status": "confirmed",
+      "evidenceIds": [
+        "film-iron-man-3"
+      ],
+      "presentation": {
+        "laneId": "lane-main",
+        "position": [
+          24,
+          0,
+          0
+        ],
+        "displayOrder": 9
+      }
+    },
+    {
+      "id": "film-event-winter-soldier",
+      "type": "event",
+      "title": "Captain America: The Winter Soldier",
+      "description": "Steve y Natasha descubren la infiltración de HYDRA en S.H.I.E.L.D.",
+      "timelineId": "main",
+      "realmId": null,
+      "time": {
+        "domain": "calendar",
+        "year": 2014,
+        "precision": "year",
+        "sequence": 100,
+        "earliestYear": 2014,
+        "latestYear": 2014,
+        "status": "approximate",
+        "evidenceIds": [
+          "film-winter-soldier",
+          "timeline-dates"
+        ]
+      },
+      "participants": [
+        "steve",
+        "natasha",
+        "bucky"
+      ],
+      "status": "confirmed",
+      "evidenceIds": [
+        "film-winter-soldier"
+      ],
+      "presentation": {
+        "laneId": "lane-main",
+        "position": [
+          27,
+          0,
+          0
+        ],
+        "displayOrder": 10
+      }
+    },
+    {
+      "id": "film-event-guardians",
+      "type": "event",
+      "title": "Guardians of the Galaxy",
+      "description": "Se forma el equipo y se disputa la Gema del Poder.",
+      "timelineId": "main",
+      "realmId": null,
+      "time": {
+        "domain": "calendar",
+        "year": 2014,
+        "precision": "year",
+        "sequence": 110,
+        "earliestYear": 2014,
+        "latestYear": 2014,
+        "status": "approximate",
+        "evidenceIds": [
+          "film-guardians",
+          "timeline-dates"
+        ]
+      },
+      "participants": [
+        "quill",
+        "gamora-main",
+        "rocket",
+        "nebula-main"
+      ],
+      "status": "confirmed",
+      "evidenceIds": [
+        "film-guardians"
+      ],
+      "presentation": {
+        "laneId": "lane-cosmic",
+        "position": [
+          30,
+          4,
+          0
+        ],
+        "displayOrder": 11
+      }
+    },
+    {
+      "id": "film-event-guardians-2",
+      "type": "event",
+      "title": "Guardians of the Galaxy Vol. 2",
+      "description": "El equipo enfrenta a Ego poco después de su formación.",
+      "timelineId": "main",
+      "realmId": null,
+      "time": {
+        "domain": "calendar",
+        "year": 2014,
+        "precision": "year",
+        "sequence": 120,
+        "earliestYear": 2014,
+        "latestYear": 2014,
+        "status": "approximate",
+        "evidenceIds": [
+          "film-guardians-2",
+          "timeline-dates"
+        ]
+      },
+      "participants": [
+        "quill",
+        "gamora-main",
+        "rocket",
+        "nebula-main"
+      ],
+      "status": "confirmed",
+      "evidenceIds": [
+        "film-guardians-2"
+      ],
+      "presentation": {
+        "laneId": "lane-cosmic",
+        "position": [
+          33,
+          4,
+          0
+        ],
+        "displayOrder": 12
+      }
+    },
+    {
+      "id": "film-event-age-ultron",
+      "type": "event",
+      "title": "Avengers: Age of Ultron",
+      "description": "Los Avengers combaten a Ultron y aparece Vision.",
+      "timelineId": "main",
+      "realmId": null,
+      "time": {
+        "domain": "calendar",
+        "year": 2015,
+        "precision": "year",
+        "sequence": 130,
+        "earliestYear": 2015,
+        "latestYear": 2015,
+        "status": "approximate",
+        "evidenceIds": [
+          "film-age-ultron",
+          "timeline-dates"
+        ]
+      },
+      "participants": [
+        "tony",
+        "steve",
+        "bruce",
+        "thor",
+        "natasha",
+        "clint"
+      ],
+      "status": "confirmed",
+      "evidenceIds": [
+        "film-age-ultron"
+      ],
+      "presentation": {
+        "laneId": "lane-main",
+        "position": [
+          36,
+          0,
+          0
+        ],
+        "displayOrder": 13
+      }
+    },
+    {
+      "id": "film-event-ant-man",
+      "type": "event",
+      "title": "Ant-Man",
+      "description": "Scott aprende a usar el traje de Ant-Man.",
+      "timelineId": "main",
+      "realmId": null,
+      "time": {
+        "domain": "calendar",
+        "year": 2015,
+        "precision": "year",
+        "sequence": 140,
+        "earliestYear": 2015,
+        "latestYear": 2015,
+        "status": "approximate",
+        "evidenceIds": [
+          "film-ant-man",
+          "timeline-dates"
+        ]
+      },
+      "participants": [
+        "scott"
+      ],
+      "status": "confirmed",
+      "evidenceIds": [
+        "film-ant-man"
+      ],
+      "presentation": {
+        "laneId": "lane-main",
+        "position": [
+          39,
+          0,
+          0
+        ],
+        "displayOrder": 14
+      }
+    },
+    {
+      "id": "film-event-civil-war",
+      "type": "event",
+      "title": "Captain America: Civil War",
+      "description": "Los Acuerdos de Sokovia y el conflicto por Bucky dividen al equipo.",
+      "timelineId": "main",
+      "realmId": null,
+      "time": {
+        "domain": "calendar",
+        "year": 2016,
+        "precision": "year",
+        "sequence": 150,
+        "earliestYear": 2016,
+        "latestYear": 2016,
+        "status": "approximate",
+        "evidenceIds": [
+          "film-civil-war",
+          "timeline-dates"
+        ]
+      },
+      "participants": [
+        "steve",
+        "tony",
+        "natasha",
+        "bucky",
+        "peter",
+        "scott"
+      ],
+      "status": "confirmed",
+      "evidenceIds": [
+        "film-civil-war"
+      ],
+      "presentation": {
+        "laneId": "lane-main",
+        "position": [
+          42,
+          0,
+          0
+        ],
+        "displayOrder": 15
+      }
+    },
+    {
+      "id": "film-event-black-widow",
+      "type": "event",
+      "title": "Black Widow",
+      "description": "Natasha enfrenta a la Red Room después de Civil War. El poscrédito posterior a Endgame queda fuera de este resumen.",
+      "timelineId": "main",
+      "realmId": null,
+      "time": {
+        "domain": "calendar",
+        "year": 2016,
+        "precision": "year",
+        "sequence": 160,
+        "earliestYear": 2016,
+        "latestYear": 2016,
+        "status": "approximate",
+        "evidenceIds": [
+          "film-black-widow",
+          "timeline-dates"
+        ]
+      },
+      "participants": [
+        "natasha",
+        "yelena"
+      ],
+      "status": "confirmed",
+      "evidenceIds": [
+        "film-black-widow"
+      ],
+      "presentation": {
+        "laneId": "lane-main",
+        "position": [
+          45,
+          0,
+          0
+        ],
+        "displayOrder": 16
+      }
+    },
+    {
+      "id": "film-event-black-panther",
+      "type": "event",
+      "title": "Black Panther",
+      "description": "T’Challa enfrenta a Killmonger tras los sucesos de Civil War.",
+      "timelineId": "main",
+      "realmId": null,
+      "time": {
+        "domain": "calendar",
+        "year": 2016,
+        "precision": "year",
+        "sequence": 170,
+        "earliestYear": 2016,
+        "latestYear": 2016,
+        "status": "approximate",
+        "evidenceIds": [
+          "film-black-panther",
+          "timeline-dates"
+        ]
+      },
+      "participants": [
+        "tchalla"
+      ],
+      "status": "confirmed",
+      "evidenceIds": [
+        "film-black-panther"
+      ],
+      "presentation": {
+        "laneId": "lane-main",
+        "position": [
+          48,
+          0,
+          0
+        ],
+        "displayOrder": 17
+      }
+    },
+    {
+      "id": "film-event-homecoming",
+      "type": "event",
+      "title": "Spider-Man: Homecoming",
+      "description": "Peter enfrenta a Vulture después de participar en Civil War.",
+      "timelineId": "main",
+      "realmId": null,
+      "time": {
+        "domain": "calendar",
+        "year": 2016,
+        "precision": "year",
+        "sequence": 180,
+        "earliestYear": 2016,
+        "latestYear": 2016,
+        "status": "approximate",
+        "evidenceIds": [
+          "film-homecoming",
+          "timeline-dates"
+        ]
+      },
+      "participants": [
+        "peter",
+        "tony"
+      ],
+      "status": "confirmed",
+      "evidenceIds": [
+        "film-homecoming"
+      ],
+      "presentation": {
+        "laneId": "lane-main",
+        "position": [
+          51,
+          0,
+          0
+        ],
+        "displayOrder": 18
+      }
+    },
+    {
+      "id": "film-event-doctor-strange",
+      "type": "event",
+      "title": "Doctor Strange",
+      "description": "Stephen se forma como hechicero; su historia abarca un período prolongado.",
+      "timelineId": "main",
+      "realmId": null,
+      "time": {
+        "domain": "calendar",
+        "year": null,
+        "precision": "range",
+        "sequence": 190,
+        "earliestYear": 2016,
+        "latestYear": 2017,
+        "status": "approximate",
+        "evidenceIds": [
+          "film-doctor-strange",
+          "timeline-dates"
+        ],
+        "note": "Rango del resumen o fecha revisada entre fuentes; no equivale a una fecha exacta."
+      },
+      "participants": [
+        "strange"
+      ],
+      "status": "confirmed",
+      "evidenceIds": [
+        "film-doctor-strange"
+      ],
+      "presentation": {
+        "laneId": "lane-main",
+        "position": [
+          54,
+          0,
+          0
+        ],
+        "displayOrder": 19
+      }
+    },
+    {
+      "id": "film-event-ant-man-wasp",
+      "type": "event",
+      "title": "Ant-Man and the Wasp",
+      "description": "Scott y Hope rescatan a Janet antes del chasquido.",
+      "timelineId": "main",
+      "realmId": null,
+      "time": {
+        "domain": "calendar",
+        "year": 2018,
+        "precision": "year",
+        "sequence": 210,
+        "earliestYear": 2018,
+        "latestYear": 2018,
+        "status": "approximate",
+        "evidenceIds": [
+          "film-ant-man-wasp",
+          "timeline-dates"
+        ]
+      },
+      "participants": [
+        "scott",
+        "hope"
+      ],
+      "status": "confirmed",
+      "evidenceIds": [
+        "film-ant-man-wasp"
+      ],
+      "presentation": {
+        "laneId": "lane-main",
+        "position": [
+          60,
+          0,
+          0
+        ],
+        "displayOrder": 21
+      }
+    },
+    {
+      "id": "film-event-far-from-home",
+      "type": "event",
+      "title": "Spider-Man: Far From Home",
+      "description": "Peter enfrenta a Mysterio después de Endgame.",
+      "timelineId": "main",
+      "realmId": null,
+      "time": {
+        "domain": "calendar",
+        "year": 2024,
+        "precision": "year",
+        "sequence": 240,
+        "earliestYear": 2024,
+        "latestYear": 2024,
+        "status": "approximate",
+        "evidenceIds": [
+          "film-far-from-home",
+          "timeline-dates"
+        ]
+      },
+      "participants": [
+        "peter"
+      ],
+      "status": "confirmed",
+      "evidenceIds": [
+        "film-far-from-home"
+      ],
+      "presentation": {
+        "laneId": "lane-main",
+        "position": [
+          86,
+          0,
+          0
+        ],
+        "displayOrder": 24
+      }
+    },
+    {
+      "id": "avengers-reunion",
+      "type": "event",
+      "title": "Avengers se reúnen",
+      "description": "La batalla y captura de Loki cierran la invasión.",
+      "timelineId": "main",
+      "realmId": null,
+      "time": {
+        "domain": "calendar",
+        "year": 2012,
+        "precision": "year",
+        "sequence": 71,
+        "earliestYear": 2012,
+        "latestYear": 2012,
+        "status": "approximate",
+        "evidenceIds": [
+          "film-avengers",
+          "timeline-dates"
+        ]
+      },
+      "participants": [
+        "tony",
+        "steve"
+      ],
+      "status": "confirmed",
+      "evidenceIds": [
+        "film-avengers"
+      ],
+      "presentation": {
+        "laneId": "lane-main",
+        "position": [
+          19,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "id": "gamora-death",
+      "type": "event",
+      "title": "Thanos sacrifica a Gamora",
+      "description": "La Gamora principal muere en Vormir.",
+      "timelineId": "main",
+      "realmId": null,
+      "time": {
+        "domain": "calendar",
+        "year": 2018,
+        "precision": "year",
+        "sequence": 221,
+        "earliestYear": 2018,
+        "latestYear": 2018,
+        "status": "approximate",
+        "evidenceIds": [
+          "film-infinity-war",
+          "timeline-dates"
+        ]
+      },
+      "participants": [
+        "gamora-main",
+        "thanos"
+      ],
+      "status": "confirmed",
+      "evidenceIds": [
+        "film-infinity-war"
+      ],
+      "presentation": {
+        "laneId": "lane-main",
+        "position": [
+          64,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "id": "snap",
+      "type": "event",
+      "title": "Chasquido de Thanos",
+      "description": "La mitad de los seres vivos desaparece.",
+      "timelineId": "main",
+      "realmId": null,
+      "time": {
+        "domain": "calendar",
+        "year": 2018,
+        "precision": "year",
+        "sequence": 222,
+        "earliestYear": 2018,
+        "latestYear": 2018,
+        "status": "approximate",
+        "evidenceIds": [
+          "film-infinity-war",
+          "timeline-dates"
+        ]
+      },
+      "participants": [
+        "thanos"
+      ],
+      "status": "confirmed",
+      "evidenceIds": [
+        "film-infinity-war"
+      ],
+      "presentation": {
+        "laneId": "lane-main",
+        "position": [
+          65,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "id": "scott-trapped",
+      "type": "event",
+      "title": "Scott queda en el Reino Cuántico",
+      "description": "Los demás desaparecen durante el chasquido; Scott queda atrapado.",
+      "timelineId": "main",
+      "realmId": null,
+      "time": {
+        "domain": "calendar",
+        "year": 2018,
+        "precision": "year",
+        "sequence": 223,
+        "earliestYear": 2018,
+        "latestYear": 2018,
+        "status": "approximate",
+        "evidenceIds": [
+          "film-ant-man-wasp",
+          "timeline-dates"
+        ]
+      },
+      "participants": [
+        "scott"
+      ],
+      "status": "confirmed",
+      "evidenceIds": [
+        "film-ant-man-wasp"
+      ],
+      "presentation": {
+        "laneId": "lane-main",
+        "position": [
+          66,
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "id": "thanos-killed",
+      "type": "event",
+      "title": "Thanos muere en 2018",
+      "description": "Thor mata al Thanos que ya destruyó las gemas.",
+      "timelineId": "main",
+      "realmId": null,
+      "time": {
+        "domain": "calendar",
+        "year": 2018,
+        "precision": "year",
+        "sequence": 224,
+        "earliestYear": 2018,
+        "latestYear": 2018,
+        "status": "approximate",
+        "evidenceIds": [
+          "film-endgame",
+          "timeline-dates"
+        ]
+      },
+      "participants": [
+        "thor",
+        "thanos"
+      ],
+      "status": "confirmed",
+      "evidenceIds": [
+        "film-endgame"
+      ],
+      "presentation": {
+        "laneId": "lane-main",
+        "position": [
+          67,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "id": "scott-return",
+      "type": "event",
+      "title": "Scott regresa en 2023",
+      "description": "Su regreso permite proponer la misión temporal.",
+      "timelineId": "main",
+      "realmId": null,
+      "time": {
+        "domain": "calendar",
+        "year": 2023,
+        "precision": "year",
+        "sequence": 225,
+        "earliestYear": 2023,
+        "latestYear": 2023,
+        "status": "approximate",
+        "evidenceIds": [
+          "film-endgame",
+          "timeline-dates"
+        ]
+      },
+      "participants": [
+        "scott"
+      ],
+      "status": "confirmed",
+      "evidenceIds": [
+        "film-endgame"
+      ],
+      "presentation": {
+        "laneId": "lane-main",
+        "position": [
+          68,
+          2,
+          0
+        ]
+      }
+    },
+    {
+      "id": "stones-ready",
+      "type": "event",
+      "title": "Las gemas llegan a 2023",
+      "description": "Los viajeros supervivientes reúnen las gemas recuperadas.",
+      "timelineId": "main",
+      "realmId": null,
+      "time": {
+        "domain": "calendar",
+        "year": 2023,
+        "precision": "year",
+        "sequence": 231,
+        "earliestYear": 2023,
+        "latestYear": 2023,
+        "status": "approximate",
+        "evidenceIds": [
+          "film-endgame",
+          "timeline-dates"
+        ]
+      },
+      "participants": [
+        "tony",
+        "steve",
+        "bruce",
+        "thor",
+        "clint",
+        "scott"
+      ],
+      "status": "confirmed",
+      "evidenceIds": [
+        "film-endgame"
+      ],
+      "presentation": {
+        "laneId": "lane-main",
+        "position": [
+          72,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "id": "hulk-snap",
+      "type": "event",
+      "title": "Hulk recupera a los desaparecidos",
+      "description": "Bruce revierte las desapariciones sin borrar los cinco años transcurridos.",
+      "timelineId": "main",
+      "realmId": null,
+      "time": {
+        "domain": "calendar",
+        "year": 2023,
+        "precision": "year",
+        "sequence": 232,
+        "earliestYear": 2023,
+        "latestYear": 2023,
+        "status": "approximate",
+        "evidenceIds": [
+          "film-endgame",
+          "timeline-dates"
+        ]
+      },
+      "participants": [
+        "bruce"
+      ],
+      "status": "confirmed",
+      "evidenceIds": [
+        "film-endgame"
+      ],
+      "presentation": {
+        "laneId": "lane-main",
+        "position": [
+          74,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "id": "thanos-arrival",
+      "type": "event",
+      "title": "Thanos de 2014 llega a 2023",
+      "description": "La versión de 2014 llega con su ejército; no resucita al Thanos muerto.",
+      "timelineId": "main",
+      "realmId": null,
+      "time": {
+        "domain": "calendar",
+        "year": 2023,
+        "precision": "year",
+        "sequence": 233,
+        "earliestYear": 2023,
+        "latestYear": 2023,
+        "status": "approximate",
+        "evidenceIds": [
+          "film-endgame",
+          "timeline-dates"
+        ]
+      },
+      "participants": [
+        "thanos-2014",
+        "gamora-2014",
+        "nebula-2014"
+      ],
+      "status": "confirmed",
+      "evidenceIds": [
+        "film-endgame"
+      ],
+      "presentation": {
+        "laneId": "lane-main",
+        "position": [
+          76,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "id": "final-battle",
+      "type": "event",
+      "title": "Batalla final de Endgame",
+      "description": "Los héroes enfrentan al ejército de la versión de Thanos de 2014.",
+      "timelineId": "main",
+      "realmId": null,
+      "time": {
+        "domain": "calendar",
+        "year": 2023,
+        "precision": "year",
+        "sequence": 234,
+        "earliestYear": 2023,
+        "latestYear": 2023,
+        "status": "approximate",
+        "evidenceIds": [
+          "film-endgame",
+          "timeline-dates"
+        ]
+      },
+      "participants": [
+        "tony",
+        "steve",
+        "thor",
+        "thanos-2014",
+        "gamora-2014"
+      ],
+      "status": "confirmed",
+      "evidenceIds": [
+        "film-endgame"
+      ],
+      "presentation": {
+        "laneId": "lane-main",
+        "position": [
+          78,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "id": "tony-sacrifice",
+      "type": "event",
+      "title": "Tony se sacrifica",
+      "description": "Tony elimina a Thanos de 2014 y su ejército.",
+      "timelineId": "main",
+      "realmId": null,
+      "time": {
+        "domain": "calendar",
+        "year": 2023,
+        "precision": "year",
+        "sequence": 235,
+        "earliestYear": 2023,
+        "latestYear": 2023,
+        "status": "approximate",
+        "evidenceIds": [
+          "film-endgame",
+          "timeline-dates"
+        ]
+      },
+      "participants": [
+        "tony",
+        "thanos-2014"
+      ],
+      "status": "confirmed",
+      "evidenceIds": [
+        "film-endgame"
+      ],
+      "presentation": {
+        "laneId": "lane-main",
+        "position": [
+          80,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "id": "return-mission",
+      "type": "event",
+      "title": "Steve parte para devolver las gemas",
+      "description": "Se muestra su partida; las entregas individuales quedan fuera de pantalla. Su vida con Peggy no se ubica en una rama confirmada en este archivo.",
+      "timelineId": "main",
+      "realmId": null,
+      "time": {
+        "domain": "calendar",
+        "year": 2023,
+        "precision": "year",
+        "sequence": 236,
+        "earliestYear": 2023,
+        "latestYear": 2023,
+        "status": "approximate",
+        "evidenceIds": [
+          "film-endgame",
+          "timeline-dates"
+        ]
+      },
+      "participants": [
+        "steve"
+      ],
+      "status": "confirmed",
+      "evidenceIds": [
+        "film-endgame"
+      ],
+      "presentation": {
+        "laneId": "lane-main",
+        "position": [
+          82,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "id": "camp-1970",
+      "type": "event",
+      "title": "Camp Lehigh, 1970",
+      "description": "Tony y Steve recuperan el Tesseract y partículas Pym.",
+      "timelineId": "visited-1970",
+      "realmId": null,
+      "time": {
+        "domain": "calendar",
+        "year": 1970,
+        "precision": "year",
+        "sequence": 1,
+        "earliestYear": 1970,
+        "latestYear": 1970,
+        "status": "approximate",
+        "evidenceIds": [
+          "film-endgame",
+          "timeline-dates"
+        ]
+      },
+      "participants": [
+        "tony",
+        "steve"
+      ],
+      "status": "confirmed",
+      "evidenceIds": [
+        "film-endgame"
+      ],
+      "presentation": {
+        "laneId": "lane-1970",
+        "position": [
+          18,
+          -5,
+          0
+        ]
+      }
+    },
+    {
+      "id": "asgard-2013",
+      "type": "event",
+      "title": "Asgard, 2013",
+      "description": "Thor y Rocket recuperan la Gema de la Realidad y Mjolnir.",
+      "timelineId": "visited-2013",
+      "realmId": null,
+      "time": {
+        "domain": "calendar",
+        "year": 2013,
+        "precision": "year",
+        "sequence": 1,
+        "earliestYear": 2013,
+        "latestYear": 2013,
+        "status": "approximate",
+        "evidenceIds": [
+          "film-endgame",
+          "timeline-dates"
+        ]
+      },
+      "participants": [
+        "thor",
+        "rocket"
+      ],
+      "status": "confirmed",
+      "evidenceIds": [
+        "film-endgame"
+      ],
+      "presentation": {
+        "laneId": "lane-2013",
+        "position": [
+          24,
+          -10,
+          0
+        ]
+      }
+    },
+    {
+      "id": "morag-2014",
+      "type": "event",
+      "title": "Morag, 2014",
+      "description": "Rhodey y Nebula recuperan la Gema del Poder antes de Quill.",
+      "timelineId": "visited-2014",
+      "realmId": null,
+      "time": {
+        "domain": "calendar",
+        "year": 2014,
+        "precision": "year",
+        "sequence": 1,
+        "earliestYear": 2014,
+        "latestYear": 2014,
+        "status": "approximate",
+        "evidenceIds": [
+          "film-endgame",
+          "timeline-dates"
+        ]
+      },
+      "participants": [
+        "rhodey",
+        "nebula-main"
+      ],
+      "status": "confirmed",
+      "evidenceIds": [
+        "film-endgame"
+      ],
+      "presentation": {
+        "laneId": "lane-morag",
+        "position": [
+          30,
+          -15,
+          0
+        ]
+      }
+    },
+    {
+      "id": "vormir-2014",
+      "type": "event",
+      "title": "Vormir, 2014",
+      "description": "Natasha y Clint buscan la Gema del Alma.",
+      "timelineId": "visited-2014",
+      "realmId": null,
+      "time": {
+        "domain": "calendar",
+        "year": 2014,
+        "precision": "year",
+        "sequence": 1,
+        "earliestYear": 2014,
+        "latestYear": 2014,
+        "status": "approximate",
+        "evidenceIds": [
+          "film-endgame",
+          "timeline-dates"
+        ]
+      },
+      "participants": [
+        "natasha",
+        "clint"
+      ],
+      "status": "confirmed",
+      "evidenceIds": [
+        "film-endgame"
+      ],
+      "presentation": {
+        "laneId": "lane-vormir",
+        "position": [
+          30,
+          -20,
+          0
+        ]
+      }
+    },
+    {
+      "id": "natasha-sacrifice",
+      "type": "event",
+      "title": "Natasha se sacrifica",
+      "description": "Clint obtiene la Gema del Alma.",
+      "timelineId": "visited-2014",
+      "realmId": null,
+      "time": {
+        "domain": "calendar",
+        "year": 2014,
+        "precision": "year",
+        "sequence": 2,
+        "earliestYear": 2014,
+        "latestYear": 2014,
+        "status": "approximate",
+        "evidenceIds": [
+          "film-endgame",
+          "timeline-dates"
+        ]
+      },
+      "participants": [
+        "natasha",
+        "clint"
+      ],
+      "status": "confirmed",
+      "evidenceIds": [
+        "film-endgame"
+      ],
+      "presentation": {
+        "laneId": "lane-vormir",
+        "position": [
+          33,
+          -20,
+          0
+        ]
+      }
+    },
+    {
+      "id": "thanos-discovers",
+      "type": "event",
+      "title": "Thanos de 2014 descubre la misión",
+      "description": "Los implantes de Nebula revelan el futuro a la versión de Thanos de 2014.",
+      "timelineId": "visited-2014",
+      "realmId": null,
+      "time": {
+        "domain": "calendar",
+        "year": 2014,
+        "precision": "year",
+        "sequence": 2,
+        "earliestYear": 2014,
+        "latestYear": 2014,
+        "status": "approximate",
+        "evidenceIds": [
+          "film-endgame",
+          "timeline-dates"
+        ]
+      },
+      "participants": [
+        "thanos-2014",
+        "nebula-main",
+        "nebula-2014"
+      ],
+      "status": "confirmed",
+      "evidenceIds": [
+        "film-endgame"
+      ],
+      "presentation": {
+        "laneId": "lane-morag",
+        "position": [
+          34,
+          -15,
+          0
+        ]
+      }
+    },
+    {
+      "id": "thanos-departs",
+      "type": "event",
+      "title": "Thanos de 2014 parte hacia 2023",
+      "description": "Su ejército se traslada al presente de los viajeros.",
+      "timelineId": "visited-2014",
+      "realmId": null,
+      "time": {
+        "domain": "calendar",
+        "year": 2014,
+        "precision": "year",
+        "sequence": 3,
+        "earliestYear": 2014,
+        "latestYear": 2014,
+        "status": "approximate",
+        "evidenceIds": [
+          "film-endgame",
+          "timeline-dates"
+        ]
+      },
+      "participants": [
+        "thanos-2014",
+        "gamora-2014",
+        "nebula-2014"
+      ],
+      "status": "confirmed",
+      "evidenceIds": [
+        "film-endgame"
+      ],
+      "presentation": {
+        "laneId": "lane-morag",
+        "position": [
+          38,
+          -15,
+          0
+        ]
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "heist",
+      "source": "departure",
+      "target": "intervention",
+      "type": "time_travel",
+      "label": "2023 → 2012",
+      "participants": [
+        "tony",
+        "steve",
+        "bruce",
+        "scott"
+      ],
+      "status": "confirmed",
+      "evidenceIds": [
+        "film-endgame"
+      ],
+      "presentation": {
+        "route": "bezier",
+        "controlPoints": [
+          [
+            66,
+            2,
+            3
+          ],
+          [
+            18,
+            12,
+            3
+          ]
+        ]
+      }
+    },
+    {
+      "id": "divergence",
+      "source": "capture",
+      "target": "escape",
+      "type": "branch",
+      "label": "Otra versión de la historia: Loki escapa",
+      "participants": [
+        "loki-variant"
+      ],
+      "status": "confirmed",
+      "evidenceIds": [
+        "official-loki-ep1"
+      ],
+      "presentation": {
+        "route": "bezier",
+        "controlPoints": [
+          [
+            18,
+            0,
+            1
+          ],
+          [
+            21,
+            10,
+            1
+          ]
+        ]
+      }
+    },
+    {
+      "id": "intervention-escape",
+      "source": "intervention",
+      "target": "escape",
+      "type": "continuation",
+      "label": "La misión falla y Loki escapa",
+      "participants": [
+        "loki-variant"
+      ],
+      "status": "confirmed",
+      "evidenceIds": [
+        "film-endgame",
+        "official-loki-ep1"
+      ],
+      "presentation": {
+        "route": "curve",
+        "controlPoints": []
+      }
+    },
+    {
+      "id": "escape-gobi",
+      "source": "escape",
+      "target": "gobi",
+      "type": "spatial_travel",
+      "label": "Portal del Tesseract",
+      "participants": [
+        "loki-variant"
+      ],
+      "status": "confirmed",
+      "evidenceIds": [
+        "official-loki-ep1"
+      ],
+      "presentation": {
+        "route": "curve",
+        "controlPoints": []
+      }
+    },
+    {
+      "id": "gobi-arrest",
+      "source": "gobi",
+      "target": "arrest",
+      "type": "continuation",
+      "label": "Arresto",
+      "participants": [
+        "loki-variant"
+      ],
+      "status": "confirmed",
+      "evidenceIds": [
+        "official-loki-ep1"
+      ],
+      "presentation": {
+        "route": "curve",
+        "controlPoints": []
+      }
+    },
+    {
+      "id": "arrest-reset",
+      "source": "arrest",
+      "target": "reset",
+      "type": "precedes",
+      "label": "La TVA interviene sobre la rama",
+      "participants": [],
+      "status": "confirmed",
+      "evidenceIds": [
+        "official-loki-ep1"
+      ],
+      "presentation": {
+        "route": "curve",
+        "controlPoints": []
+      }
+    },
+    {
+      "id": "arrest-tva",
+      "source": "arrest",
+      "target": "tva-arrival",
+      "type": "realm_transfer",
+      "label": "Traslado por la TVA",
+      "participants": [
+        "loki-variant",
+        "b15"
+      ],
+      "status": "confirmed",
+      "evidenceIds": [
+        "official-loki-ep1"
+      ],
+      "presentation": {
+        "route": "bezier",
+        "controlPoints": [
+          [
+            27,
+            10,
+            1
+          ],
+          [
+            27,
+            16,
+            1
+          ]
+        ]
+      }
+    },
+    {
+      "id": "order-1",
+      "source": "film-event-first-avenger",
+      "target": "film-event-captain-marvel",
+      "type": "display_order",
+      "label": "Orden editorial",
+      "participants": [],
+      "status": "confirmed",
+      "evidenceIds": [
+        "timeline-editorial"
+      ],
+      "presentation": {
+        "route": "curve",
+        "controlPoints": []
+      },
+      "note": "No afirma precedencia estricta entre todos los acontecimientos de ambas películas."
+    },
+    {
+      "id": "order-2",
+      "source": "film-event-captain-marvel",
+      "target": "film-event-iron-man",
+      "type": "display_order",
+      "label": "Orden editorial",
+      "participants": [],
+      "status": "confirmed",
+      "evidenceIds": [
+        "timeline-editorial"
+      ],
+      "presentation": {
+        "route": "curve",
+        "controlPoints": []
+      },
+      "note": "No afirma precedencia estricta entre todos los acontecimientos de ambas películas."
+    },
+    {
+      "id": "order-3",
+      "source": "film-event-iron-man",
+      "target": "film-event-iron-man-2",
+      "type": "display_order",
+      "label": "Orden editorial",
+      "participants": [],
+      "status": "confirmed",
+      "evidenceIds": [
+        "timeline-editorial"
+      ],
+      "presentation": {
+        "route": "curve",
+        "controlPoints": []
+      },
+      "note": "No afirma precedencia estricta entre todos los acontecimientos de ambas películas."
+    },
+    {
+      "id": "order-4",
+      "source": "film-event-iron-man-2",
+      "target": "film-event-incredible-hulk",
+      "type": "display_order",
+      "label": "Orden editorial",
+      "participants": [],
+      "status": "confirmed",
+      "evidenceIds": [
+        "timeline-editorial"
+      ],
+      "presentation": {
+        "route": "curve",
+        "controlPoints": []
+      },
+      "note": "No afirma precedencia estricta entre todos los acontecimientos de ambas películas."
+    },
+    {
+      "id": "order-5",
+      "source": "film-event-incredible-hulk",
+      "target": "film-event-thor",
+      "type": "display_order",
+      "label": "Orden editorial",
+      "participants": [],
+      "status": "confirmed",
+      "evidenceIds": [
+        "timeline-editorial"
+      ],
+      "presentation": {
+        "route": "curve",
+        "controlPoints": []
+      },
+      "note": "No afirma precedencia estricta entre todos los acontecimientos de ambas películas."
+    },
+    {
+      "id": "order-6",
+      "source": "film-event-thor",
+      "target": "capture",
+      "type": "display_order",
+      "label": "Orden editorial",
+      "participants": [],
+      "status": "confirmed",
+      "evidenceIds": [
+        "timeline-editorial"
+      ],
+      "presentation": {
+        "route": "curve",
+        "controlPoints": []
+      },
+      "note": "No afirma precedencia estricta entre todos los acontecimientos de ambas películas."
+    },
+    {
+      "id": "order-7",
+      "source": "capture",
+      "target": "dark-world",
+      "type": "display_order",
+      "label": "Orden editorial",
+      "participants": [],
+      "status": "confirmed",
+      "evidenceIds": [
+        "timeline-editorial"
+      ],
+      "presentation": {
+        "route": "curve",
+        "controlPoints": []
+      },
+      "note": "No afirma precedencia estricta entre todos los acontecimientos de ambas películas."
+    },
+    {
+      "id": "order-8",
+      "source": "dark-world",
+      "target": "film-event-iron-man-3",
+      "type": "display_order",
+      "label": "Orden editorial",
+      "participants": [],
+      "status": "confirmed",
+      "evidenceIds": [
+        "timeline-editorial"
+      ],
+      "presentation": {
+        "route": "curve",
+        "controlPoints": []
+      },
+      "note": "No afirma precedencia estricta entre todos los acontecimientos de ambas películas."
+    },
+    {
+      "id": "order-9",
+      "source": "film-event-iron-man-3",
+      "target": "film-event-winter-soldier",
+      "type": "display_order",
+      "label": "Orden editorial",
+      "participants": [],
+      "status": "confirmed",
+      "evidenceIds": [
+        "timeline-editorial"
+      ],
+      "presentation": {
+        "route": "curve",
+        "controlPoints": []
+      },
+      "note": "No afirma precedencia estricta entre todos los acontecimientos de ambas películas."
+    },
+    {
+      "id": "order-10",
+      "source": "film-event-winter-soldier",
+      "target": "film-event-guardians",
+      "type": "display_order",
+      "label": "Orden editorial",
+      "participants": [],
+      "status": "confirmed",
+      "evidenceIds": [
+        "timeline-editorial"
+      ],
+      "presentation": {
+        "route": "curve",
+        "controlPoints": []
+      },
+      "note": "No afirma precedencia estricta entre todos los acontecimientos de ambas películas."
+    },
+    {
+      "id": "order-11",
+      "source": "film-event-guardians",
+      "target": "film-event-guardians-2",
+      "type": "display_order",
+      "label": "Orden editorial",
+      "participants": [],
+      "status": "confirmed",
+      "evidenceIds": [
+        "timeline-editorial"
+      ],
+      "presentation": {
+        "route": "curve",
+        "controlPoints": []
+      },
+      "note": "No afirma precedencia estricta entre todos los acontecimientos de ambas películas."
+    },
+    {
+      "id": "order-12",
+      "source": "film-event-guardians-2",
+      "target": "film-event-age-ultron",
+      "type": "display_order",
+      "label": "Orden editorial",
+      "participants": [],
+      "status": "confirmed",
+      "evidenceIds": [
+        "timeline-editorial"
+      ],
+      "presentation": {
+        "route": "curve",
+        "controlPoints": []
+      },
+      "note": "No afirma precedencia estricta entre todos los acontecimientos de ambas películas."
+    },
+    {
+      "id": "order-13",
+      "source": "film-event-age-ultron",
+      "target": "film-event-ant-man",
+      "type": "display_order",
+      "label": "Orden editorial",
+      "participants": [],
+      "status": "confirmed",
+      "evidenceIds": [
+        "timeline-editorial"
+      ],
+      "presentation": {
+        "route": "curve",
+        "controlPoints": []
+      },
+      "note": "No afirma precedencia estricta entre todos los acontecimientos de ambas películas."
+    },
+    {
+      "id": "order-14",
+      "source": "film-event-ant-man",
+      "target": "film-event-civil-war",
+      "type": "display_order",
+      "label": "Orden editorial",
+      "participants": [],
+      "status": "confirmed",
+      "evidenceIds": [
+        "timeline-editorial"
+      ],
+      "presentation": {
+        "route": "curve",
+        "controlPoints": []
+      },
+      "note": "No afirma precedencia estricta entre todos los acontecimientos de ambas películas."
+    },
+    {
+      "id": "order-15",
+      "source": "film-event-civil-war",
+      "target": "film-event-black-widow",
+      "type": "display_order",
+      "label": "Orden editorial",
+      "participants": [],
+      "status": "confirmed",
+      "evidenceIds": [
+        "timeline-editorial"
+      ],
+      "presentation": {
+        "route": "curve",
+        "controlPoints": []
+      },
+      "note": "No afirma precedencia estricta entre todos los acontecimientos de ambas películas."
+    },
+    {
+      "id": "order-16",
+      "source": "film-event-black-widow",
+      "target": "film-event-black-panther",
+      "type": "display_order",
+      "label": "Orden editorial",
+      "participants": [],
+      "status": "confirmed",
+      "evidenceIds": [
+        "timeline-editorial"
+      ],
+      "presentation": {
+        "route": "curve",
+        "controlPoints": []
+      },
+      "note": "No afirma precedencia estricta entre todos los acontecimientos de ambas películas."
+    },
+    {
+      "id": "order-17",
+      "source": "film-event-black-panther",
+      "target": "film-event-homecoming",
+      "type": "display_order",
+      "label": "Orden editorial",
+      "participants": [],
+      "status": "confirmed",
+      "evidenceIds": [
+        "timeline-editorial"
+      ],
+      "presentation": {
+        "route": "curve",
+        "controlPoints": []
+      },
+      "note": "No afirma precedencia estricta entre todos los acontecimientos de ambas películas."
+    },
+    {
+      "id": "order-18",
+      "source": "film-event-homecoming",
+      "target": "film-event-doctor-strange",
+      "type": "display_order",
+      "label": "Orden editorial",
+      "participants": [],
+      "status": "confirmed",
+      "evidenceIds": [
+        "timeline-editorial"
+      ],
+      "presentation": {
+        "route": "curve",
+        "controlPoints": []
+      },
+      "note": "No afirma precedencia estricta entre todos los acontecimientos de ambas películas."
+    },
+    {
+      "id": "order-19",
+      "source": "film-event-doctor-strange",
+      "target": "ragnarok",
+      "type": "display_order",
+      "label": "Orden editorial",
+      "participants": [],
+      "status": "confirmed",
+      "evidenceIds": [
+        "timeline-editorial"
+      ],
+      "presentation": {
+        "route": "curve",
+        "controlPoints": []
+      },
+      "note": "No afirma precedencia estricta entre todos los acontecimientos de ambas películas."
+    },
+    {
+      "id": "order-20",
+      "source": "ragnarok",
+      "target": "film-event-ant-man-wasp",
+      "type": "display_order",
+      "label": "Orden editorial",
+      "participants": [],
+      "status": "confirmed",
+      "evidenceIds": [
+        "timeline-editorial"
+      ],
+      "presentation": {
+        "route": "curve",
+        "controlPoints": []
+      },
+      "note": "No afirma precedencia estricta entre todos los acontecimientos de ambas películas."
+    },
+    {
+      "id": "order-21",
+      "source": "film-event-ant-man-wasp",
+      "target": "main-death",
+      "type": "display_order",
+      "label": "Orden editorial",
+      "participants": [],
+      "status": "confirmed",
+      "evidenceIds": [
+        "timeline-editorial"
+      ],
+      "presentation": {
+        "route": "curve",
+        "controlPoints": []
+      },
+      "note": "No afirma precedencia estricta entre todos los acontecimientos de ambas películas."
+    },
+    {
+      "id": "order-22",
+      "source": "main-death",
+      "target": "departure",
+      "type": "display_order",
+      "label": "Orden editorial",
+      "participants": [],
+      "status": "confirmed",
+      "evidenceIds": [
+        "timeline-editorial"
+      ],
+      "presentation": {
+        "route": "curve",
+        "controlPoints": []
+      },
+      "note": "No afirma precedencia estricta entre todos los acontecimientos de ambas películas."
+    },
+    {
+      "id": "order-23",
+      "source": "departure",
+      "target": "film-event-far-from-home",
+      "type": "display_order",
+      "label": "Orden editorial",
+      "participants": [],
+      "status": "confirmed",
+      "evidenceIds": [
+        "timeline-editorial"
+      ],
+      "presentation": {
+        "route": "curve",
+        "controlPoints": []
+      },
+      "note": "No afirma precedencia estricta entre todos los acontecimientos de ambas películas."
+    },
+    {
+      "id": "overlap-im-hulk",
+      "source": "film-event-iron-man-2",
+      "target": "film-event-incredible-hulk",
+      "type": "overlaps",
+      "label": "Historias superpuestas",
+      "participants": [],
+      "status": "confirmed",
+      "evidenceIds": [
+        "timeline-dates"
+      ],
+      "presentation": {
+        "route": "curve",
+        "controlPoints": []
+      }
+    },
+    {
+      "id": "overlap-hulk-thor",
+      "source": "film-event-incredible-hulk",
+      "target": "film-event-thor",
+      "type": "overlaps",
+      "label": "Fury’s Big Week",
+      "participants": [],
+      "status": "confirmed",
+      "evidenceIds": [
+        "timeline-dates"
+      ],
+      "presentation": {
+        "route": "curve",
+        "controlPoints": []
+      }
+    },
+    {
+      "id": "cw-bw",
+      "source": "film-event-civil-war",
+      "target": "film-event-black-widow",
+      "type": "continuation",
+      "label": "Natasha tras Civil War",
+      "participants": [
+        "natasha"
+      ],
+      "status": "confirmed",
+      "evidenceIds": [
+        "film-civil-war",
+        "film-black-widow"
+      ],
+      "presentation": {
+        "route": "curve",
+        "controlPoints": []
+      }
+    },
+    {
+      "id": "cw-bp",
+      "source": "film-event-civil-war",
+      "target": "film-event-black-panther",
+      "type": "continuation",
+      "label": "T’Challa vuelve a Wakanda",
+      "participants": [
+        "tchalla"
+      ],
+      "status": "confirmed",
+      "evidenceIds": [
+        "film-civil-war",
+        "film-black-panther"
+      ],
+      "presentation": {
+        "route": "curve",
+        "controlPoints": []
+      }
+    },
+    {
+      "id": "cw-home",
+      "source": "film-event-civil-war",
+      "target": "film-event-homecoming",
+      "type": "continuation",
+      "label": "Peter después de Civil War",
+      "participants": [
+        "peter"
+      ],
+      "status": "confirmed",
+      "evidenceIds": [
+        "film-civil-war",
+        "film-homecoming"
+      ],
+      "presentation": {
+        "route": "curve",
+        "controlPoints": []
+      }
+    },
+    {
+      "id": "guardians-sequel",
+      "source": "film-event-guardians",
+      "target": "film-event-guardians-2",
+      "type": "continuation",
+      "label": "Poco después",
+      "participants": [
+        "quill"
+      ],
+      "status": "confirmed",
+      "evidenceIds": [
+        "film-guardians",
+        "film-guardians-2"
+      ],
+      "presentation": {
+        "route": "curve",
+        "controlPoints": []
+      }
+    },
+    {
+      "id": "rag-iw",
+      "source": "ragnarok",
+      "target": "main-death",
+      "type": "continuation",
+      "label": "Ataque a la nave",
+      "participants": [
+        "loki-main",
+        "thor"
+      ],
+      "status": "confirmed",
+      "evidenceIds": [
+        "film-thor-ragnarok",
+        "film-infinity-war"
+      ],
+      "presentation": {
+        "route": "curve",
+        "controlPoints": []
+      }
+    },
+    {
+      "id": "iw-gamora",
+      "source": "main-death",
+      "target": "gamora-death",
+      "type": "precedes",
+      "label": "Vormir",
+      "participants": [],
+      "status": "confirmed",
+      "evidenceIds": [
+        "film-infinity-war"
+      ],
+      "presentation": {
+        "route": "curve",
+        "controlPoints": []
+      }
+    },
+    {
+      "id": "iw-snap",
+      "source": "gamora-death",
+      "target": "snap",
+      "type": "precedes",
+      "label": "Thanos completa las gemas",
+      "participants": [],
+      "status": "confirmed",
+      "evidenceIds": [
+        "film-infinity-war"
+      ],
+      "presentation": {
+        "route": "curve",
+        "controlPoints": []
+      }
+    },
+    {
+      "id": "amw-snap",
+      "source": "film-event-ant-man-wasp",
+      "target": "scott-trapped",
+      "type": "continuation",
+      "label": "Poscréditos",
+      "participants": [
+        "scott"
+      ],
+      "status": "confirmed",
+      "evidenceIds": [
+        "film-ant-man-wasp"
+      ],
+      "presentation": {
+        "route": "curve",
+        "controlPoints": []
+      }
+    },
+    {
+      "id": "snap-overlap",
+      "source": "snap",
+      "target": "scott-trapped",
+      "type": "overlaps",
+      "label": "Mismo chasquido",
+      "participants": [],
+      "status": "confirmed",
+      "evidenceIds": [
+        "film-infinity-war",
+        "film-ant-man-wasp"
+      ],
+      "presentation": {
+        "route": "curve",
+        "controlPoints": []
+      }
+    },
+    {
+      "id": "snap-garden",
+      "source": "snap",
+      "target": "thanos-killed",
+      "type": "precedes",
+      "label": "Comienzo de Endgame",
+      "participants": [],
+      "status": "confirmed",
+      "evidenceIds": [
+        "film-infinity-war",
+        "film-endgame"
+      ],
+      "presentation": {
+        "route": "curve",
+        "controlPoints": []
+      }
+    },
+    {
+      "id": "garden-scott",
+      "source": "thanos-killed",
+      "target": "scott-return",
+      "type": "precedes",
+      "label": "Salto de cinco años",
+      "participants": [],
+      "status": "confirmed",
+      "evidenceIds": [
+        "film-endgame"
+      ],
+      "presentation": {
+        "route": "curve",
+        "controlPoints": []
+      }
+    },
+    {
+      "id": "scott-plan",
+      "source": "scott-return",
+      "target": "departure",
+      "type": "causes",
+      "label": "Scott propone recuperar las gemas",
+      "participants": [
+        "scott"
+      ],
+      "status": "confirmed",
+      "evidenceIds": [
+        "film-endgame"
+      ],
+      "presentation": {
+        "route": "curve",
+        "controlPoints": []
+      }
+    },
+    {
+      "id": "main-stones",
+      "source": "departure",
+      "target": "stones-ready",
+      "type": "precedes",
+      "label": "Regreso de los viajeros",
+      "participants": [],
+      "status": "confirmed",
+      "evidenceIds": [
+        "film-endgame"
+      ],
+      "presentation": {
+        "route": "curve",
+        "controlPoints": []
+      }
+    },
+    {
+      "id": "stones-hulk",
+      "source": "stones-ready",
+      "target": "hulk-snap",
+      "type": "continuation",
+      "label": "Se usa el nuevo guantelete",
+      "participants": [
+        "bruce"
+      ],
+      "status": "confirmed",
+      "evidenceIds": [
+        "film-endgame"
+      ],
+      "presentation": {
+        "route": "curve",
+        "controlPoints": []
+      }
+    },
+    {
+      "id": "hulk-arrival",
+      "source": "hulk-snap",
+      "target": "thanos-arrival",
+      "type": "precedes",
+      "label": "El complejo es atacado",
+      "participants": [],
+      "status": "confirmed",
+      "evidenceIds": [
+        "film-endgame"
+      ],
+      "presentation": {
+        "route": "curve",
+        "controlPoints": []
+      }
+    },
+    {
+      "id": "arrival-battle",
+      "source": "thanos-arrival",
+      "target": "final-battle",
+      "type": "continuation",
+      "label": "Batalla",
+      "participants": [
+        "thanos-2014"
+      ],
+      "status": "confirmed",
+      "evidenceIds": [
+        "film-endgame"
+      ],
+      "presentation": {
+        "route": "curve",
+        "controlPoints": []
+      }
+    },
+    {
+      "id": "battle-tony",
+      "source": "final-battle",
+      "target": "tony-sacrifice",
+      "type": "continuation",
+      "label": "Victoria final",
+      "participants": [
+        "tony"
+      ],
+      "status": "confirmed",
+      "evidenceIds": [
+        "film-endgame"
+      ],
+      "presentation": {
+        "route": "curve",
+        "controlPoints": []
+      }
+    },
+    {
+      "id": "tony-steve",
+      "source": "tony-sacrifice",
+      "target": "return-mission",
+      "type": "precedes",
+      "label": "Después del funeral",
+      "participants": [],
+      "status": "confirmed",
+      "evidenceIds": [
+        "film-endgame"
+      ],
+      "presentation": {
+        "route": "curve",
+        "controlPoints": []
+      }
+    },
+    {
+      "id": "endgame-ffh",
+      "source": "return-mission",
+      "target": "film-event-far-from-home",
+      "type": "precedes",
+      "label": "Meses después",
+      "participants": [],
+      "status": "confirmed",
+      "evidenceIds": [
+        "film-endgame",
+        "film-far-from-home"
+      ],
+      "presentation": {
+        "route": "curve",
+        "controlPoints": []
+      }
+    },
+    {
+      "id": "ny-1970",
+      "source": "intervention",
+      "target": "camp-1970",
+      "type": "time_travel",
+      "label": "2012 → 1970",
+      "participants": [
+        "tony",
+        "steve"
+      ],
+      "status": "confirmed",
+      "evidenceIds": [
+        "film-endgame"
+      ],
+      "presentation": {
+        "route": "bezier",
+        "controlPoints": [
+          [
+            18,
+            12,
+            9
+          ],
+          [
+            18,
+            -3,
+            9
+          ]
+        ]
+      }
+    },
+    {
+      "id": "2023-asgard",
+      "source": "departure",
+      "target": "asgard-2013",
+      "type": "time_travel",
+      "label": "2023 → 2013",
+      "participants": [
+        "thor",
+        "rocket"
+      ],
+      "status": "confirmed",
+      "evidenceIds": [
+        "film-endgame"
+      ],
+      "presentation": {
+        "route": "bezier",
+        "controlPoints": [
+          [
+            66,
+            2,
+            3
+          ],
+          [
+            24,
+            -8,
+            3
+          ]
+        ]
+      }
+    },
+    {
+      "id": "2023-morag",
+      "source": "departure",
+      "target": "morag-2014",
+      "type": "time_travel",
+      "label": "2023 → 2014",
+      "participants": [
+        "rhodey",
+        "nebula-main"
+      ],
+      "status": "confirmed",
+      "evidenceIds": [
+        "film-endgame"
+      ],
+      "presentation": {
+        "route": "bezier",
+        "controlPoints": [
+          [
+            66,
+            2,
+            5
+          ],
+          [
+            30,
+            -13,
+            5
+          ]
+        ]
+      }
+    },
+    {
+      "id": "2023-vormir",
+      "source": "departure",
+      "target": "vormir-2014",
+      "type": "time_travel",
+      "label": "2023 → 2014",
+      "participants": [
+        "natasha",
+        "clint"
+      ],
+      "status": "confirmed",
+      "evidenceIds": [
+        "film-endgame"
+      ],
+      "presentation": {
+        "route": "bezier",
+        "controlPoints": [
+          [
+            66,
+            2,
+            7
+          ],
+          [
+            30,
+            -18,
+            7
+          ]
+        ]
+      }
+    },
+    {
+      "id": "1970-return",
+      "source": "camp-1970",
+      "target": "stones-ready",
+      "type": "time_travel",
+      "label": "1970 → 2023",
+      "participants": [
+        "tony",
+        "steve"
+      ],
+      "status": "confirmed",
+      "evidenceIds": [
+        "film-endgame"
+      ],
+      "presentation": {
+        "route": "bezier",
+        "controlPoints": [
+          [
+            18,
+            -3,
+            9
+          ],
+          [
+            72,
+            2,
+            9
+          ]
+        ]
+      }
+    },
+    {
+      "id": "asgard-return",
+      "source": "asgard-2013",
+      "target": "stones-ready",
+      "type": "time_travel",
+      "label": "2013 → 2023",
+      "participants": [
+        "thor",
+        "rocket"
+      ],
+      "status": "confirmed",
+      "evidenceIds": [
+        "film-endgame"
+      ],
+      "presentation": {
+        "route": "bezier",
+        "controlPoints": [
+          [
+            24,
+            -8,
+            3
+          ],
+          [
+            72,
+            2,
+            3
+          ]
+        ]
+      }
+    },
+    {
+      "id": "morag-return",
+      "source": "morag-2014",
+      "target": "stones-ready",
+      "type": "time_travel",
+      "label": "Rhodey vuelve con la gema",
+      "participants": [
+        "rhodey"
+      ],
+      "status": "confirmed",
+      "evidenceIds": [
+        "film-endgame"
+      ],
+      "presentation": {
+        "route": "bezier",
+        "controlPoints": [
+          [
+            30,
+            -13,
+            5
+          ],
+          [
+            72,
+            2,
+            5
+          ]
+        ]
+      }
+    },
+    {
+      "id": "sacrifice-return",
+      "source": "natasha-sacrifice",
+      "target": "stones-ready",
+      "type": "time_travel",
+      "label": "Clint regresa; Natasha no",
+      "participants": [
+        "clint"
+      ],
+      "status": "confirmed",
+      "evidenceIds": [
+        "film-endgame"
+      ],
+      "presentation": {
+        "route": "bezier",
+        "controlPoints": [
+          [
+            33,
+            -18,
+            7
+          ],
+          [
+            72,
+            2,
+            7
+          ]
+        ]
+      }
+    },
+    {
+      "id": "thanos-travel",
+      "source": "thanos-departs",
+      "target": "thanos-arrival",
+      "type": "time_travel",
+      "label": "2014 → 2023",
+      "participants": [
+        "thanos-2014",
+        "gamora-2014",
+        "nebula-2014"
+      ],
+      "status": "confirmed",
+      "evidenceIds": [
+        "film-endgame"
+      ],
+      "presentation": {
+        "route": "bezier",
+        "controlPoints": [
+          [
+            38,
+            -13,
+            9
+          ],
+          [
+            76,
+            2,
+            9
+          ]
+        ]
+      }
+    },
+    {
+      "id": "vormir-sacrifice",
+      "source": "vormir-2014",
+      "target": "natasha-sacrifice",
+      "type": "continuation",
+      "label": "Gema del Alma",
+      "participants": [
+        "natasha",
+        "clint"
+      ],
+      "status": "confirmed",
+      "evidenceIds": [
+        "film-endgame"
+      ],
+      "presentation": {
+        "route": "curve",
+        "controlPoints": []
+      }
+    },
+    {
+      "id": "morag-discovery",
+      "source": "morag-2014",
+      "target": "thanos-discovers",
+      "type": "causes",
+      "label": "Enlace entre las Nebulas",
+      "participants": [
+        "nebula-main",
+        "nebula-2014"
+      ],
+      "status": "confirmed",
+      "evidenceIds": [
+        "film-endgame"
+      ],
+      "presentation": {
+        "route": "curve",
+        "controlPoints": []
+      }
+    },
+    {
+      "id": "discovery-departure",
+      "source": "thanos-discovers",
+      "target": "thanos-departs",
+      "type": "continuation",
+      "label": "Plan de Thanos",
+      "participants": [
+        "thanos-2014"
+      ],
+      "status": "confirmed",
+      "evidenceIds": [
+        "film-endgame"
+      ],
+      "presentation": {
+        "route": "curve",
+        "controlPoints": []
+      }
+    },
+    {
+      "id": "revisit-asgard",
+      "source": "dark-world",
+      "target": "asgard-2013",
+      "type": "revisits",
+      "label": "Endgame revisita este contexto",
+      "participants": [],
+      "status": "confirmed",
+      "evidenceIds": [
+        "film-endgame"
+      ],
+      "presentation": {
+        "route": "bezier",
+        "controlPoints": [
+          [
+            21,
+            0,
+            1
+          ],
+          [
+            24,
+            -10,
+            1
+          ]
+        ]
+      }
+    },
+    {
+      "id": "revisit-morag",
+      "source": "film-event-guardians",
+      "target": "morag-2014",
+      "type": "revisits",
+      "label": "Morag antes de Quill",
+      "participants": [],
+      "status": "confirmed",
+      "evidenceIds": [
+        "film-endgame"
+      ],
+      "presentation": {
+        "route": "bezier",
+        "controlPoints": [
+          [
+            30,
+            4,
+            1
+          ],
+          [
+            30,
+            -15,
+            1
+          ]
+        ]
+      }
+    },
+    {
+      "id": "capture-reunion",
+      "source": "capture",
+      "target": "avengers-reunion",
+      "type": "continuation",
+      "label": "Fin de la invasión",
+      "participants": [
+        "tony",
+        "steve"
+      ],
+      "status": "confirmed",
+      "evidenceIds": [
+        "film-avengers"
+      ],
+      "presentation": {
+        "route": "curve",
+        "controlPoints": []
+      }
+    }
+  ],
+  "depictions": [
+    {
+      "id": "depiction-1",
+      "workId": "avengers",
+      "nodeId": "capture",
+      "role": "main_story",
+      "locator": "Final de la batalla de Nueva York"
+    },
+    {
+      "id": "depiction-2",
+      "workId": "thor-dark-world",
+      "nodeId": "dark-world",
+      "role": "main_story",
+      "locator": "Historia de Loki"
+    },
+    {
+      "id": "depiction-3",
+      "workId": "thor-ragnarok",
+      "nodeId": "ragnarok",
+      "role": "main_story",
+      "locator": "Salida de Asgard"
+    },
+    {
+      "id": "depiction-4",
+      "workId": "infinity-war",
+      "nodeId": "main-death",
+      "role": "main_story",
+      "locator": "Secuencia de apertura"
+    },
+    {
+      "id": "depiction-5",
+      "workId": "endgame",
+      "nodeId": "departure",
+      "role": "main_story",
+      "locator": "Preparación de la misión temporal"
+    },
+    {
+      "id": "depiction-6",
+      "workId": "endgame",
+      "nodeId": "intervention",
+      "role": "past_visit",
+      "locator": "Nueva York, 2012"
+    },
+    {
+      "id": "depiction-7",
+      "workId": "endgame",
+      "nodeId": "escape",
+      "role": "past_visit",
+      "locator": "Loki recoge el Tesseract"
+    },
+    {
+      "id": "depiction-8",
+      "workId": "loki-s1",
+      "nodeId": "escape",
+      "role": "recap",
+      "locator": "Temporada 1, episodio 1"
+    },
+    {
+      "id": "depiction-9",
+      "workId": "loki-s1",
+      "nodeId": "gobi",
+      "role": "main_story",
+      "locator": "Temporada 1, episodio 1"
+    },
+    {
+      "id": "depiction-10",
+      "workId": "loki-s1",
+      "nodeId": "arrest",
+      "role": "main_story",
+      "locator": "Temporada 1, episodio 1"
+    },
+    {
+      "id": "depiction-11",
+      "workId": "loki-s1",
+      "nodeId": "reset",
+      "role": "main_story",
+      "locator": "Temporada 1, episodio 1"
+    },
+    {
+      "id": "depiction-12",
+      "workId": "loki-s1",
+      "nodeId": "tva-arrival",
+      "role": "main_story",
+      "locator": "Temporada 1, episodio 1"
+    },
+    {
+      "id": "dep-film-event-first-avenger-first-avenger",
+      "workId": "first-avenger",
+      "nodeId": "film-event-first-avenger",
+      "role": "main_story",
+      "locator": "Historia principal"
+    },
+    {
+      "id": "dep-film-event-captain-marvel-captain-marvel",
+      "workId": "captain-marvel",
+      "nodeId": "film-event-captain-marvel",
+      "role": "main_story",
+      "locator": "Historia principal"
+    },
+    {
+      "id": "dep-film-event-iron-man-iron-man",
+      "workId": "iron-man",
+      "nodeId": "film-event-iron-man",
+      "role": "main_story",
+      "locator": "Historia principal"
+    },
+    {
+      "id": "dep-film-event-iron-man-2-iron-man-2",
+      "workId": "iron-man-2",
+      "nodeId": "film-event-iron-man-2",
+      "role": "main_story",
+      "locator": "Historia principal"
+    },
+    {
+      "id": "dep-film-event-incredible-hulk-incredible-hulk",
+      "workId": "incredible-hulk",
+      "nodeId": "film-event-incredible-hulk",
+      "role": "main_story",
+      "locator": "Historia principal"
+    },
+    {
+      "id": "dep-film-event-thor-thor",
+      "workId": "thor",
+      "nodeId": "film-event-thor",
+      "role": "main_story",
+      "locator": "Historia principal"
+    },
+    {
+      "id": "dep-film-event-iron-man-3-iron-man-3",
+      "workId": "iron-man-3",
+      "nodeId": "film-event-iron-man-3",
+      "role": "main_story",
+      "locator": "Historia principal"
+    },
+    {
+      "id": "dep-film-event-winter-soldier-winter-soldier",
+      "workId": "winter-soldier",
+      "nodeId": "film-event-winter-soldier",
+      "role": "main_story",
+      "locator": "Historia principal"
+    },
+    {
+      "id": "dep-film-event-guardians-guardians",
+      "workId": "guardians",
+      "nodeId": "film-event-guardians",
+      "role": "main_story",
+      "locator": "Historia principal"
+    },
+    {
+      "id": "dep-film-event-guardians-2-guardians-2",
+      "workId": "guardians-2",
+      "nodeId": "film-event-guardians-2",
+      "role": "main_story",
+      "locator": "Historia principal"
+    },
+    {
+      "id": "dep-film-event-age-ultron-age-ultron",
+      "workId": "age-ultron",
+      "nodeId": "film-event-age-ultron",
+      "role": "main_story",
+      "locator": "Historia principal"
+    },
+    {
+      "id": "dep-film-event-ant-man-ant-man",
+      "workId": "ant-man",
+      "nodeId": "film-event-ant-man",
+      "role": "main_story",
+      "locator": "Historia principal"
+    },
+    {
+      "id": "dep-film-event-civil-war-civil-war",
+      "workId": "civil-war",
+      "nodeId": "film-event-civil-war",
+      "role": "main_story",
+      "locator": "Historia principal"
+    },
+    {
+      "id": "dep-film-event-black-widow-black-widow",
+      "workId": "black-widow",
+      "nodeId": "film-event-black-widow",
+      "role": "main_story",
+      "locator": "Historia principal"
+    },
+    {
+      "id": "dep-film-event-black-panther-black-panther",
+      "workId": "black-panther",
+      "nodeId": "film-event-black-panther",
+      "role": "main_story",
+      "locator": "Historia principal"
+    },
+    {
+      "id": "dep-film-event-homecoming-homecoming",
+      "workId": "homecoming",
+      "nodeId": "film-event-homecoming",
+      "role": "main_story",
+      "locator": "Historia principal"
+    },
+    {
+      "id": "dep-film-event-doctor-strange-doctor-strange",
+      "workId": "doctor-strange",
+      "nodeId": "film-event-doctor-strange",
+      "role": "main_story",
+      "locator": "Historia principal"
+    },
+    {
+      "id": "dep-film-event-ant-man-wasp-ant-man-wasp",
+      "workId": "ant-man-wasp",
+      "nodeId": "film-event-ant-man-wasp",
+      "role": "main_story",
+      "locator": "Historia principal"
+    },
+    {
+      "id": "dep-film-event-far-from-home-far-from-home",
+      "workId": "far-from-home",
+      "nodeId": "film-event-far-from-home",
+      "role": "main_story",
+      "locator": "Historia principal"
+    },
+    {
+      "id": "dep-avengers-reunion-avengers",
+      "workId": "avengers",
+      "nodeId": "avengers-reunion",
+      "role": "main_story",
+      "locator": "Historia principal"
+    },
+    {
+      "id": "dep-gamora-death-infinity-war",
+      "workId": "infinity-war",
+      "nodeId": "gamora-death",
+      "role": "main_story",
+      "locator": "Historia principal"
+    },
+    {
+      "id": "dep-snap-infinity-war",
+      "workId": "infinity-war",
+      "nodeId": "snap",
+      "role": "main_story",
+      "locator": "Historia principal"
+    },
+    {
+      "id": "dep-scott-trapped-ant-man-wasp",
+      "workId": "ant-man-wasp",
+      "nodeId": "scott-trapped",
+      "role": "post_credit",
+      "locator": "Viaje a 2018"
+    },
+    {
+      "id": "dep-thanos-killed-endgame",
+      "workId": "endgame",
+      "nodeId": "thanos-killed",
+      "role": "main_story",
+      "locator": "Historia principal"
+    },
+    {
+      "id": "dep-scott-return-endgame",
+      "workId": "endgame",
+      "nodeId": "scott-return",
+      "role": "main_story",
+      "locator": "Historia principal"
+    },
+    {
+      "id": "dep-stones-ready-endgame",
+      "workId": "endgame",
+      "nodeId": "stones-ready",
+      "role": "main_story",
+      "locator": "Historia principal"
+    },
+    {
+      "id": "dep-hulk-snap-endgame",
+      "workId": "endgame",
+      "nodeId": "hulk-snap",
+      "role": "main_story",
+      "locator": "Historia principal"
+    },
+    {
+      "id": "dep-thanos-arrival-endgame",
+      "workId": "endgame",
+      "nodeId": "thanos-arrival",
+      "role": "main_story",
+      "locator": "Historia principal"
+    },
+    {
+      "id": "dep-final-battle-endgame",
+      "workId": "endgame",
+      "nodeId": "final-battle",
+      "role": "main_story",
+      "locator": "Historia principal"
+    },
+    {
+      "id": "dep-tony-sacrifice-endgame",
+      "workId": "endgame",
+      "nodeId": "tony-sacrifice",
+      "role": "main_story",
+      "locator": "Historia principal"
+    },
+    {
+      "id": "dep-return-mission-endgame",
+      "workId": "endgame",
+      "nodeId": "return-mission",
+      "role": "main_story",
+      "locator": "Historia principal"
+    },
+    {
+      "id": "dep-camp-1970-endgame",
+      "workId": "endgame",
+      "nodeId": "camp-1970",
+      "role": "past_visit",
+      "locator": "Viaje a 1970"
+    },
+    {
+      "id": "dep-asgard-2013-endgame",
+      "workId": "endgame",
+      "nodeId": "asgard-2013",
+      "role": "past_visit",
+      "locator": "Viaje a 2013"
+    },
+    {
+      "id": "dep-morag-2014-endgame",
+      "workId": "endgame",
+      "nodeId": "morag-2014",
+      "role": "past_visit",
+      "locator": "Viaje a 2014"
+    },
+    {
+      "id": "dep-vormir-2014-endgame",
+      "workId": "endgame",
+      "nodeId": "vormir-2014",
+      "role": "past_visit",
+      "locator": "Viaje a 2014"
+    },
+    {
+      "id": "dep-natasha-sacrifice-endgame",
+      "workId": "endgame",
+      "nodeId": "natasha-sacrifice",
+      "role": "past_visit",
+      "locator": "Viaje a 2014"
+    },
+    {
+      "id": "dep-thanos-discovers-endgame",
+      "workId": "endgame",
+      "nodeId": "thanos-discovers",
+      "role": "past_visit",
+      "locator": "Viaje a 2014"
+    },
+    {
+      "id": "dep-thanos-departs-endgame",
+      "workId": "endgame",
+      "nodeId": "thanos-departs",
+      "role": "past_visit",
+      "locator": "Viaje a 2014"
+    }
+  ],
+  "presentation": {
+    "dimension": "3d",
+    "coordinateSystem": {
+      "x": "progresión esquemática dentro del carril",
+      "y": "separación entre carriles",
+      "z": "profundidad para separar viajes y cruces",
+      "units": "unidades arbitrarias"
+    },
+    "defaultCamera": {
+      "position": [
+        43,
+        7,
+        105
+      ],
+      "target": [
+        43,
+        -2,
+        0
+      ]
+    },
+    "lanes": [
+      {
+        "id": "lane-main",
+        "timelineId": "main",
+        "realmId": null,
+        "label": "Historia principal",
+        "color": "#F4B860",
+        "offset": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "id": "lane-branch",
+        "timelineId": "loki-branch",
+        "realmId": null,
+        "label": "Rama de 2012",
+        "color": "#65D6A4",
+        "offset": [
+          0,
+          10,
+          0
+        ]
+      },
+      {
+        "id": "lane-tva",
+        "timelineId": null,
+        "realmId": "tva",
+        "label": "Fuera del tiempo",
+        "color": "#AD9BFF",
+        "offset": [
+          0,
+          16,
+          0
+        ]
+      },
+      {
+        "id": "lane-cosmic",
+        "timelineId": "main",
+        "realmId": null,
+        "label": "Guardians · mismo universo, otra región",
+        "color": "#F783AC",
+        "offset": [
+          0,
+          4,
+          0
+        ]
+      },
+      {
+        "id": "lane-1970",
+        "timelineId": "visited-1970",
+        "realmId": null,
+        "label": "Camp Lehigh · 1970",
+        "color": "#FFD166",
+        "offset": [
+          0,
+          -5,
+          0
+        ]
+      },
+      {
+        "id": "lane-2013",
+        "timelineId": "visited-2013",
+        "realmId": null,
+        "label": "Asgard · 2013",
+        "color": "#A4C8FF",
+        "offset": [
+          0,
+          -10,
+          0
+        ]
+      },
+      {
+        "id": "lane-morag",
+        "timelineId": "visited-2014",
+        "realmId": null,
+        "label": "Morag · 2014",
+        "color": "#FCA36C",
+        "offset": [
+          0,
+          -15,
+          0
+        ]
+      },
+      {
+        "id": "lane-vormir",
+        "timelineId": "visited-2014",
+        "realmId": null,
+        "label": "Vormir · 2014",
+        "color": "#D3A6FF",
+        "offset": [
+          0,
+          -20,
+          0
+        ]
+      }
+    ],
+    "edgeStyles": {
+      "continuation": {
+        "stroke": "solid",
+        "color": "inherit-source-lane",
+        "arrow": true
+      },
+      "precedes": {
+        "stroke": "dotted",
+        "color": "#99A3B3",
+        "arrow": true
+      },
+      "time_travel": {
+        "stroke": "dashed",
+        "color": "#74B9FF",
+        "arrow": true
+      },
+      "causes": {
+        "stroke": "dotted",
+        "color": "#99A3B3",
+        "arrow": true
+      },
+      "branch": {
+        "stroke": "solid",
+        "color": "#65D6A4",
+        "arrow": true
+      },
+      "spatial_travel": {
+        "stroke": "solid",
+        "color": "#65D6A4",
+        "arrow": true
+      },
+      "realm_transfer": {
+        "stroke": "dashed",
+        "color": "#AD9BFF",
+        "arrow": true
+      },
+      "display_order": {
+        "stroke": "solid",
+        "color": "inherit-source-lane",
+        "arrow": false
+      },
+      "overlaps": {
+        "stroke": "dotted",
+        "color": "#89CDD3",
+        "arrow": false
+      },
+      "revisits": {
+        "stroke": "dotted",
+        "color": "#94A3B8",
+        "arrow": false
+      }
+    },
+    "interaction": {
+      "selectNode": "Mostrar title, description, time, obras vinculadas y evidencia.",
+      "selectEdge": "Mostrar label, type, participants y evidencia.",
+      "selectWork": "Resaltar todos los nodos con una depiction de esa obra.",
+      "defaultVisibleEdgeTypes": [
+        "continuation",
+        "precedes",
+        "time_travel",
+        "branch",
+        "spatial_travel",
+        "realm_transfer",
+        "display_order",
+        "overlaps"
+      ],
+      "optionalEdgeTypes": [
+        "causes",
+        "revisits"
+      ],
+      "motion": "Los pulsos siguen la dirección source→target; no equivalen al calendario."
+    },
+    "boundsHint": {
+      "min": [
+        0,
+        -20,
+        0
+      ],
+      "max": [
+        86,
+        16,
+        12
+      ],
+      "note": "Incluir curvas al calcular bounds reales."
+    },
+    "navigationHint": {
+      "horizontalAxis": "x",
+      "fitAllOnReset": true,
+      "scrollRangeFromBounds": true,
+      "note": "Nunca fijar el alcance del scroll con los límites del ejemplo anterior."
+    }
+  },
+  "relationshipTypes": {
+    "continuation": "Continuación narrativa dentro de una línea, con posibles acontecimientos omitidos.",
+    "precedes": "Orden temporal sin causalidad.",
+    "time_travel": "Viaje a un momento diferente.",
+    "causes": "Relación causal mostrada.",
+    "branch": "Divergencia de historia en el punto indicado.",
+    "spatial_travel": "Cambio de ubicación dentro de una misma línea.",
+    "realm_transfer": "Traslado a un ámbito sin coordenada temporal terrestre.",
+    "display_order": "Orden editorial para visualización, no causalidad ni precedencia estricta.",
+    "overlaps": "Períodos que se superponen; relación simétrica.",
+    "revisits": "Relaciona un contexto original con la versión visitada en Endgame; no es un viaje ni una bifurcación confirmada."
+  },
+  "validationRules": [
+    "Todos los IDs referenciados deben existir.",
+    "Cada nodo tiene un solo timelineId o realmId.",
+    "Los nodos outside_time deben tener year=null.",
+    "Los destinos de viajes al pasado no requieren mayor year que el origen.",
+    "No interpretar precedes como causes.",
+    "Las ramas tienen divergenceNodeId existente.",
+    "Nodos y conexiones confirmed requieren evidenceIds.",
+    "Los workIds para selección se derivan de depictions.",
+    "Los campos presentation se pueden reemplazar sin alterar la historia.",
+    "display_order no equivale a precedes.",
+    "overlaps es simétrica.",
+    "visited_past no exige divergenceNodeId.",
+    "Una secuencia de entrega de gemas fuera de pantalla no se inventa como nodo confirmado."
+  ],
+  "compatibility": {
+    "previousSchemaVersion": "1.0.0",
+    "breakingChanges": false,
+    "addedEdgeTypes": [
+      "display_order",
+      "overlaps",
+      "revisits"
+    ],
+    "addedTimelineKind": "visited_past",
+    "rendererNotes": [
+      "Resolver estilos por type con fallback genérico.",
+      "No asumir que una línea visual nueva es otro universo.",
+      "No asumir que todos los nodos calendar tienen year numérico.",
+      "Ajustar cámara, scroll y separación de etiquetas a los nuevos bounds.",
+      "time.sequence solo ordena acontecimientos seleccionados; displayOrder organiza resúmenes."
+    ]
+  },
+  "statistics": {
+    "movies": 24,
+    "seriesSeasons": 1,
+    "nodes": 49,
+    "edges": 66,
+    "timelines": 5,
+    "visualLanes": 8
+  }
+}
