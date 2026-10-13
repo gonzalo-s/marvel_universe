@@ -44,6 +44,8 @@ export interface TimelineNode {
   description?: string;
   workId?: string;
   releaseYear?: number;
+  /** Displayed story period; ranges/approximations need not equal the layout anchor. */
+  storyPeriod?: string;
   tmdb?: TmdbReference;
   theme?: NodeTheme;
   position: Position;

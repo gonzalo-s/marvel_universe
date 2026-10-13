@@ -37,7 +37,7 @@ export function validateTimeline(data: unknown): ValidationResult {
   data.nodes.forEach((node: unknown, i: number) => {
     const path = `nodes[${i}]`;
     if (!object(node)) { error(path, 'expected an object'); return; }
-    keys(node, ['id', 'kind', 'title', 'description', 'workId', 'releaseYear', 'position', 'connections', 'tmdb', 'theme'], path);
+    keys(node, ['id', 'kind', 'title', 'description', 'workId', 'releaseYear', 'storyPeriod', 'position', 'connections', 'tmdb', 'theme'], path);
     if (!text(node.id)) error(`${path}.id`, 'expected a nonempty string');
     else if (nodeIds.has(node.id as string)) error(`${path}.id`, 'duplicate node ID');
     else nodeIds.add(node.id as string);
@@ -46,6 +46,7 @@ export function validateTimeline(data: unknown): ValidationResult {
     if (node.description !== undefined && typeof node.description !== 'string') error(`${path}.description`, 'expected a string');
     if (node.workId !== undefined && !text(node.workId)) error(`${path}.workId`, 'expected a nonempty string');
     if (node.releaseYear !== undefined && !integer(node.releaseYear)) error(`${path}.releaseYear`, 'expected a safe integer');
+    if (node.storyPeriod !== undefined && (typeof node.storyPeriod !== 'string' || !node.storyPeriod.trim())) error(`${path}.storyPeriod`, 'expected a non-empty string');
     if (node.tmdb !== undefined) {
       if (!object(node.tmdb)) error(`${path}.tmdb`, 'expected an object');
       else {

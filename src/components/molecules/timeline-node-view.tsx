@@ -86,7 +86,7 @@ export function TimelineNodeView({
               onFocus={() => hover(node.id, true)} onBlur={() => hover(node.id, false)}>
               <TitleArtwork node={node} />
             </Button>}
-            <small>{node.position.year}</small>
+            <small>{compact ? node.position.year : storyTime(node)}</small>
           </div>
         </Html>
       )}

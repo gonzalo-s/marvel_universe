@@ -339,3 +339,23 @@ test('hovering a visible title retains its slot so the clickable target does not
   const label = { id: 'hovered', x: 400, y: 300, width: 210, height: 100, selected: false, hovered: true, preferredOffset: -130 };
   assert.equal(placeTitleLabels([label], 1000, 700).get(label.id).offset, -130);
 });
+
+test('film story periods distinguish ranges and estimates from release years and anchors', () => {
+  const { storyTime } = require(join(process.env.TIMELINE_CHECK_DIR, 'lib/timeline.js'));
+  const byId = id => timeline.nodes.find(node => node.id === `film-event-${id}`);
+  assert.equal(byId('iron-man-3').storyPeriod, '2013–2014');
+  assert.equal(byId('doctor-strange').storyPeriod, '2016–2017');
+  assert.equal(byId('endgame').releaseYear, 2019);
+  assert.equal(byId('endgame').position.year, 2023);
+  assert.equal(storyTime(byId('endgame')), 'Historia: 2018 → 2023');
+  assert.match(storyTime(byId('brand-new-day')), /inferido/);
+  assert.match(storyTime(byId('fantastic-four-first-steps')), /otro universo/);
+  assert.ok(timeline.nodes.filter(node => node.kind === 'work').every(node => node.storyPeriod));
+});
+test('story periods reject empty and non-string values', () => {
+  for (const value of ['', '  ', 2023]) {
+    const data = structuredClone(timeline);
+    data.nodes[0].storyPeriod = value;
+    assert.ok(validateTimeline(data).errors.some(issue => issue.startsWith('nodes[0].storyPeriod:')));
+  }
+});

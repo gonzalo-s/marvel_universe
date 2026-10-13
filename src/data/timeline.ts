@@ -332,6 +332,7 @@ export const timeline = {
       "description": "Steve recibe el suero y combate a HYDRA durante la guerra. Fecha aproximada de la historia: 1943–1945. position.year=1943 es una referencia visual, no una fecha exacta.",
       "workId": "first-avenger",
       "releaseYear": 2011,
+      "storyPeriod": "1943–1945",
       "position": {
         "year": 1943,
         "order": 100,
@@ -359,6 +360,7 @@ export const timeline = {
       "description": "Carol descubre su pasado y enfrenta el conflicto Kree/Skrull.",
       "workId": "captain-marvel",
       "releaseYear": 2019,
+      "storyPeriod": "1995",
       "position": {
         "year": 1995,
         "order": 100,
@@ -383,9 +385,10 @@ export const timeline = {
       "id": "film-event-iron-man",
       "kind": "work",
       "title": "Iron Man",
-      "description": "Tony construye su armadura y revela su identidad. Fecha aproximada de la historia: 2008–2010. position.year=2008 es una referencia visual, no una fecha exacta.",
+      "description": "Tony construye su armadura y revela su identidad. El tramo principal transcurre en 2008 según la cronología oficial de Marvel Studios de 2023; cronologías anteriores lo situaban en 2010.",
       "workId": "iron-man",
       "releaseYear": 2008,
+      "storyPeriod": "2008",
       "position": {
         "year": 2008,
         "order": 100,
@@ -410,9 +413,10 @@ export const timeline = {
       "id": "film-event-iron-man-2",
       "kind": "work",
       "title": "Iron Man 2",
-      "description": "Tony enfrenta a Vanko durante la etapa conocida como Fury’s Big Week. Fecha aproximada de la historia: 2010–2011. position.year=2010 es una referencia visual, no una fecha exacta.",
+      "description": "Tony enfrenta a Vanko durante la etapa conocida como Fury’s Big Week. La cronología oficial de Marvel Studios de 2023 sitúa Fury’s Big Week en 2010; estas historias se superponen. El orden del mapa es editorial, no una separación temporal estricta.",
       "workId": "iron-man-2",
       "releaseYear": 2010,
+      "storyPeriod": "2010",
       "position": {
         "year": 2010,
         "order": 100,
@@ -437,9 +441,10 @@ export const timeline = {
       "id": "film-event-incredible-hulk",
       "kind": "work",
       "title": "The Incredible Hulk",
-      "description": "Bruce enfrenta a Abomination; su historia se superpone con Iron Man 2 y Thor. Fecha aproximada de la historia: 2010–2011. position.year=2010 es una referencia visual, no una fecha exacta.",
+      "description": "Bruce enfrenta a Abomination; su historia se superpone con Iron Man 2 y Thor. La cronología oficial de Marvel Studios de 2023 sitúa Fury’s Big Week en 2010; estas historias se superponen. El orden del mapa es editorial, no una separación temporal estricta.",
       "workId": "incredible-hulk",
       "releaseYear": 2008,
+      "storyPeriod": "2010",
       "position": {
         "year": 2010,
         "order": 200,
@@ -464,9 +469,10 @@ export const timeline = {
       "id": "film-event-thor",
       "kind": "work",
       "title": "Thor",
-      "description": "Thor es desterrado a la Tierra. Fecha aproximada de la historia: 2010–2011. position.year=2010 es una referencia visual, no una fecha exacta.",
+      "description": "Thor es desterrado a la Tierra. La cronología oficial de Marvel Studios de 2023 sitúa Fury’s Big Week en 2010; estas historias se superponen. El orden del mapa es editorial, no una separación temporal estricta.",
       "workId": "thor",
       "releaseYear": 2011,
+      "storyPeriod": "2010",
       "position": {
         "year": 2010,
         "order": 300,
@@ -496,9 +502,10 @@ export const timeline = {
       "id": "film-event-iron-man-3",
       "kind": "work",
       "title": "Iron Man 3",
-      "description": "Tony enfrenta a Killian tras la batalla de Nueva York; la fecha ha variado entre cronologías. Fecha aproximada de la historia: 2012–2013. position.year=2013 es una referencia visual, no una fecha exacta. El ancla visual se ubica después de Thor: The Dark World para respetar el orden de recorrido de Marvel/Disney+.",
+      "description": "Tony enfrenta a Killian durante la Navidad de 2013, después de Thor: The Dark World, según la cronología oficial de Marvel Studios de 2023. El cierre se extiende a principios de 2014; el prólogo de 1999 queda fuera del período principal mostrado.",
       "workId": "iron-man-3",
       "releaseYear": 2013,
+      "storyPeriod": "2013–2014",
       "position": {
         "year": 2013,
         "order": 300,
@@ -526,6 +533,7 @@ export const timeline = {
       "description": "Steve y Natasha descubren la infiltración de HYDRA en S.H.I.E.L.D.",
       "workId": "winter-soldier",
       "releaseYear": 2014,
+      "storyPeriod": "2014",
       "position": {
         "year": 2014,
         "order": 100,
@@ -553,6 +561,7 @@ export const timeline = {
       "description": "Se forma el equipo y se disputa la Gema del Poder. El contexto de Morag se vuelve a visitar en Endgame; esa comparación no es un viaje del equipo de Guardians hacia los viajeros.",
       "workId": "guardians",
       "releaseYear": 2014,
+      "storyPeriod": "2014",
       "position": {
         "year": 2014,
         "order": 400,
@@ -580,6 +589,7 @@ export const timeline = {
       "description": "El equipo enfrenta a Ego poco después de su formación.",
       "workId": "guardians-2",
       "releaseYear": 2017,
+      "storyPeriod": "2014",
       "position": {
         "year": 2014,
         "order": 600,
@@ -607,6 +617,7 @@ export const timeline = {
       "description": "Los Avengers combaten a Ultron y aparece Vision.",
       "workId": "age-ultron",
       "releaseYear": 2015,
+      "storyPeriod": "2015",
       "position": {
         "year": 2015,
         "order": 100,
@@ -634,6 +645,7 @@ export const timeline = {
       "description": "Scott aprende a usar el traje de Ant-Man.",
       "workId": "ant-man",
       "releaseYear": 2015,
+      "storyPeriod": "2015",
       "position": {
         "year": 2015,
         "order": 200,
@@ -661,6 +673,7 @@ export const timeline = {
       "description": "Los Acuerdos de Sokovia y el conflicto por Bucky dividen al equipo.",
       "workId": "civil-war",
       "releaseYear": 2016,
+      "storyPeriod": "2016",
       "position": {
         "year": 2016,
         "order": 100,
@@ -688,6 +701,7 @@ export const timeline = {
       "description": "Natasha enfrenta a la Red Room después de Civil War. El poscrédito posterior a Endgame queda fuera de este resumen.",
       "workId": "black-widow",
       "releaseYear": 2021,
+      "storyPeriod": "2016",
       "position": {
         "year": 2016,
         "order": 200,
@@ -715,6 +729,7 @@ export const timeline = {
       "description": "T’Challa enfrenta a Killmonger tras los sucesos de Civil War.",
       "workId": "black-panther",
       "releaseYear": 2018,
+      "storyPeriod": "2016",
       "position": {
         "year": 2016,
         "order": 300,
@@ -742,6 +757,7 @@ export const timeline = {
       "description": "Peter enfrenta a Vulture después de participar en Civil War.",
       "workId": "homecoming",
       "releaseYear": 2017,
+      "storyPeriod": "2016",
       "position": {
         "year": 2016,
         "order": 400,
@@ -769,6 +785,7 @@ export const timeline = {
       "description": "Stephen se forma como hechicero; su historia abarca un período prolongado. Fecha aproximada de la historia: 2016–2017. position.year=2016 es una referencia visual, no una fecha exacta.",
       "workId": "doctor-strange",
       "releaseYear": 2016,
+      "storyPeriod": "2016–2017",
       "position": {
         "year": 2016,
         "order": 500,
@@ -801,6 +818,7 @@ export const timeline = {
       "description": "Scott y Hope rescatan a Janet antes del chasquido.",
       "workId": "ant-man-wasp",
       "releaseYear": 2018,
+      "storyPeriod": "2018",
       "position": {
         "year": 2018,
         "order": 100,
@@ -833,6 +851,7 @@ export const timeline = {
       "description": "Peter enfrenta a Mysterio después de Endgame.",
       "workId": "far-from-home",
       "releaseYear": 2019,
+      "storyPeriod": "2024",
       "position": {
         "year": 2024,
         "order": 200,
@@ -1249,6 +1268,7 @@ export const timeline = {
       "description": "Los Avengers se reúnen para enfrentar la invasión de Nueva York. Resumen de la película; sus eventos específicos se conservan por separado.",
       "workId": "avengers",
       "releaseYear": 2012,
+      "storyPeriod": "2012",
       "position": {
         "year": 2012,
         "order": 90,
@@ -1281,6 +1301,7 @@ export const timeline = {
       "description": "Thor y sus aliados enfrentan a Malekith y la amenaza del Éter. Incluye el recorrido de Loki, representado también como evento.",
       "workId": "thor-dark-world",
       "releaseYear": 2013,
+      "storyPeriod": "2013",
       "position": {
         "year": 2013,
         "order": 90,
@@ -1313,6 +1334,7 @@ export const timeline = {
       "description": "Thor enfrenta a Hela y busca salvar al pueblo de Asgard. El segmento centrado en Loki se conserva como evento.",
       "workId": "thor-ragnarok",
       "releaseYear": 2017,
+      "storyPeriod": "2017",
       "position": {
         "year": 2017,
         "order": 90,
@@ -1345,6 +1367,7 @@ export const timeline = {
       "description": "Thanos reúne las Gemas del Infinito. La película incluye historias concurrentes y el chasquido; sus eventos se muestran por separado.",
       "workId": "infinity-war",
       "releaseYear": 2018,
+      "storyPeriod": "2018",
       "position": {
         "year": 2018,
         "order": 190,
@@ -1377,6 +1400,7 @@ export const timeline = {
       "description": "Los Avengers buscan revertir el chasquido mediante viajes temporales. La historia comienza en 2018 y su tramo principal sucede en 2023; este es el ancla visual del resumen.",
       "workId": "endgame",
       "releaseYear": 2019,
+      "storyPeriod": "2018 → 2023",
       "position": {
         "year": 2023,
         "order": 90,
@@ -1409,6 +1433,7 @@ export const timeline = {
       "description": "Shang-Chi enfrenta el legado de su padre y los Diez Anillos. Ancla visual de la historia principal después de Endgame; no es el año de estreno.",
       "workId": "shang-chi",
       "releaseYear": 2021,
+      "storyPeriod": "2024",
       "position": {
         "year": 2024,
         "order": 100,
@@ -1436,6 +1461,7 @@ export const timeline = {
       "description": "Los Eternos enfrentan la Emergencia. La película contiene episodios de miles de años; 2024 es la referencia visual de su tramo contemporáneo, no de todos sus eventos.",
       "workId": "eternals",
       "releaseYear": 2021,
+      "storyPeriod": "2024",
       "position": {
         "year": 2024,
         "order": 300,
@@ -1463,6 +1489,7 @@ export const timeline = {
       "description": "Peter pide ayuda a Doctor Strange y enfrenta visitantes de otros universos. Continúa desde Far From Home; el resumen permanece en la fila del mundo de Peter.",
       "workId": "no-way-home",
       "releaseYear": 2021,
+      "storyPeriod": "2024",
       "position": {
         "year": 2024,
         "order": 400,
@@ -1490,6 +1517,7 @@ export const timeline = {
       "description": "Doctor Strange y América Chávez recorren otros universos. 2024 funciona como ancla del relato principal; el resumen no convierte todos esos universos en una sola continuidad.",
       "workId": "multiverse-madness",
       "releaseYear": 2022,
+      "storyPeriod": "2024",
       "position": {
         "year": 2024,
         "order": 600,
@@ -1517,6 +1545,7 @@ export const timeline = {
       "description": "Thor y Jane Foster enfrentan a Gorr. Ancla visual aproximada de la historia principal; el orden entre historias contemporáneas es editorial.",
       "workId": "love-thunder",
       "releaseYear": 2022,
+      "storyPeriod": "2025",
       "position": {
         "year": 2025,
         "order": 200,
@@ -1541,9 +1570,10 @@ export const timeline = {
       "id": "film-event-wakanda-forever",
       "kind": "work",
       "title": "Black Panther: Wakanda Forever",
-      "description": "Wakanda afronta la pérdida de T’Challa y el conflicto con Talokan. Ancla visual aproximada; incluye un período de duelo que no se representa como una única fecha exacta.",
+      "description": "Wakanda afronta la pérdida de T’Challa y el conflicto con Talokan. El prólogo muestra la muerte de T’Challa en 2024 y el tramo principal sucede un año después, en 2025. El mapa usa 2025 como ancla del conflicto con Talokan.",
       "workId": "wakanda-forever",
       "releaseYear": 2022,
+      "storyPeriod": "2024–2025",
       "position": {
         "year": 2025,
         "order": 100,
@@ -1571,6 +1601,7 @@ export const timeline = {
       "description": "Scott y su familia son llevados al Reino Cuántico. 2026 es una referencia del contexto de partida; no asigna un calendario terrestre a todo el Reino Cuántico.",
       "workId": "quantumania",
       "releaseYear": 2023,
+      "storyPeriod": "≈ 2026",
       "position": {
         "year": 2026,
         "order": 100,
@@ -1598,6 +1629,7 @@ export const timeline = {
       "description": "Los Guardians buscan salvar a Rocket y enfrentan al Alto Evolucionador. Ancla visual aproximada de su presente; los recuerdos de Rocket pertenecen a otros momentos.",
       "workId": "guardians-3",
       "releaseYear": 2023,
+      "storyPeriod": "≈ 2026",
       "position": {
         "year": 2026,
         "order": 200,
@@ -1625,6 +1657,7 @@ export const timeline = {
       "description": "Carol Danvers, Monica Rambeau y Kamala Khan deben colaborar al quedar entrelazados sus poderes. Ancla visual aproximada; su colocación no demuestra separación estricta respecto de otras historias.",
       "workId": "the-marvels",
       "releaseYear": 2023,
+      "storyPeriod": "≈ 2026",
       "position": {
         "year": 2026,
         "order": 300,
@@ -1652,6 +1685,7 @@ export const timeline = {
       "description": "Wade busca salvar su mundo con la ayuda de una variante de Wolverine. El contexto inicial pertenece a otra continuidad; la película visita la TVA y el Vacío. 2024 ancla el contexto inicial y no todos los viajes.",
       "workId": "deadpool-wolverine",
       "releaseYear": 2024,
+      "storyPeriod": "≈ 2024 · otra continuidad",
       "position": {
         "year": 2024,
         "order": 500,
@@ -1673,6 +1707,7 @@ export const timeline = {
       "description": "Sam Wilson enfrenta una crisis política y al Red Hulk. Ancla visual aproximada de 2027; referencias entre fuentes sitúan el relato alrededor de 2026–2027.",
       "workId": "brave-new-world",
       "releaseYear": 2025,
+      "storyPeriod": "≈ 2027",
       "position": {
         "year": 2027,
         "order": 100,
@@ -1700,6 +1735,7 @@ export const timeline = {
       "description": "Un grupo de agentes y antihéroes enfrenta una amenaza ligada a Sentry. Ancla visual aproximada posterior a Brave New World; el epílogo y los créditos no se comprimen en una fecha exacta.",
       "workId": "thunderbolts",
       "releaseYear": 2025,
+      "storyPeriod": "≈ 2027 · epílogo posterior",
       "position": {
         "year": 2027,
         "order": 200,
@@ -1725,9 +1761,10 @@ export const timeline = {
       "id": "film-event-fantastic-four-first-steps",
       "kind": "work",
       "title": "The Fantastic Four: First Steps",
-      "description": "Los Fantastic Four enfrentan a Galactus en un mundo retrofuturista de la década de 1960, independiente de la continuidad principal. 1964 es un ancla visual de esa década, no una fecha exacta afirmada para todas las escenas.",
+      "description": "Los Fantastic Four enfrentan a Galactus en un mundo retrofuturista de la década de 1960, independiente de la continuidad principal. 1964 se conserva únicamente como ancla de ubicación. El período mostrado es la década de 1960; el relato y el epílogo no se reducen a un solo año ni al calendario de la Tierra principal.",
       "workId": "fantastic-four-first-steps",
       "releaseYear": 2025,
+      "storyPeriod": "Década de 1960 · otro universo",
       "position": {
         "year": 1964,
         "order": 100,
@@ -1750,6 +1787,7 @@ export const timeline = {
       "description": "Peter continúa su vida como Spider-Man después del hechizo que hizo olvidar su identidad. La sinopsis oficial sitúa el relato cuatro años después de No Way Home; 2028 es el ancla inferida a partir de 2024.",
       "workId": "brand-new-day",
       "releaseYear": 2026,
+      "storyPeriod": "≈ 2028 · inferido",
       "position": {
         "year": 2028,
         "order": 100,
