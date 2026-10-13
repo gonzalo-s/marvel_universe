@@ -14,19 +14,21 @@ const shader = `
 uniform sampler2D fluidDensity;
 uniform sampler2D fluidDye;
 uniform float smokeIntensity;
+uniform float smokeOpacity;
 void mainImage(const in vec4 inputColor, const in vec2 uv, out vec4 outputColor) {
   float density = max(0., texture2D(fluidDensity, uv).b);
   vec3 dye = max(vec3(0.), texture2D(fluidDye, uv).rgb);
   vec3 tint = dye / max(max(dye.r, max(dye.g, dye.b)), .001);
   float veil = min(.45, 1. - exp(-density * 2.5)) * smokeIntensity;
-  // Add luminous smoke without displacing the graph or washing out its surfaces.
-  outputColor = vec4(inputColor.rgb + tint * veil * 1.1, inputColor.a);
+  // Blend only the smoke contribution; keep the scene's own alpha intact.
+  vec3 smokeColor = inputColor.rgb + tint * veil * 1.1;
+  outputColor = vec4(mix(inputColor.rgb, smokeColor, smokeOpacity), inputColor.a);
 }`;
 
 class CosmicSmokeEffect extends Effect {
   constructor() {
     super('CosmicPointerSmoke', shader, { blendFunction: BlendFunction.NORMAL, uniforms: new Map<string, Uniform>([
-      ['fluidDensity', new Uniform(null)], ['fluidDye', new Uniform(null)], ['smokeIntensity', new Uniform(0)],
+      ['fluidDensity', new Uniform(null)], ['fluidDye', new Uniform(null)], ['smokeIntensity', new Uniform(0)], ['smokeOpacity', new Uniform(0.4)],
     ]) });
   }
   display(fluid: FluidSimulation | null, intensity: number) {
