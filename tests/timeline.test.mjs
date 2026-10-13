@@ -259,7 +259,7 @@ test('node centers retain a minimum gap in dense columns and at the far right', 
       assert.ok(Math.hypot(a[0] - b[0], a[1] - b[1]) >= 8, 'every pair keeps at least eight world units of clearance');
   }
   const columns = [...new Set(graph.layout.nodes.map(item => item.position[0]))].sort((a, b) => a - b);
-  for (let i = 1; i < columns.length; i++) assert.ok(columns[i] - columns[i - 1] >= 9);
+  for (let i = 1; i < columns.length; i++) assert.ok(columns[i] - columns[i - 1] >= 12);
 });
 
 test('events occupy a lower vertical band while retaining row membership and attached connections', () => {
@@ -292,4 +292,46 @@ test('event-to-work connections use direct paths without rising above either end
     }
     assert.equal(edge.points[1][1], (edge.start[1] + edge.end[1]) / 2);
   }
+});
+
+const { titleArtworkScale, placeTitleLabels } = require(join(process.env.TIMELINE_CHECK_DIR, 'lib/titleLabels.js'));
+test('film artwork grows on zoom-out rather than shrinking or disappearing', () => {
+  assert.equal(titleArtworkScale(2), 1);
+  assert.equal(titleArtworkScale(1), 1);
+  assert.ok(titleArtworkScale(.5) > titleArtworkScale(1));
+  assert.ok(titleArtworkScale(.1) >= titleArtworkScale(.5));
+  assert.equal(titleArtworkScale(.1), 1.35);
+});
+test('dense overview titles stagger without overlapping and packing is independent of input order', () => {
+  const labels = Array.from({ length: 8 }, (_, i) => ({ id: `film-${i}`, x: 350 + i * 30, y: 260, width: 210, height: 100, selected: false }));
+  const result = placeTitleLabels(labels, 1000, 700);
+  assert.ok([...result.values()].filter(p => p.visible).length >= 5);
+  assert.ok([...result.values()].some(p => p.visible && p.offset !== 30));
+  const rects = labels.filter(l => result.get(l.id).visible).map(l => ({ x: l.x - l.width / 2, y: l.y + result.get(l.id).offset, w: l.width, h: l.height }));
+  for (let i = 0; i < rects.length; i++) for (const b of rects.slice(i + 1)) {
+    const a = rects[i];
+    assert.ok(a.x + a.w + 12 <= b.x || b.x + b.w + 12 <= a.x || a.y + a.h + 12 <= b.y || b.y + b.h + 12 <= a.y);
+  }
+  assert.deepEqual(placeTitleLabels([...labels].reverse(), 1000, 700), result);
+});
+test('selected film title stays visible in a narrow viewport and wins crowded slots', () => {
+  const labels = [{ id: 'ordinary', x: 115, y: 50, width: 210, height: 90, selected: false, hovered: true }, { id: 'selected', x: 115, y: 50, width: 210, height: 90, selected: true }];
+  const result = placeTitleLabels(labels, 230, 140);
+  assert.equal(result.get('selected').visible, true);
+  assert.equal(result.get('ordinary').visible, false);
+  assert.ok(50 + result.get('selected').offset >= 8);
+});
+test('titles near viewport edges slide into view without reducing artwork size', () => {
+  const label = { id: 'edge-film', x: 20, y: 150, width: 210, height: 100, selected: true };
+  const placement = placeTitleLabels([label], 390, 400).get(label.id);
+  assert.equal(placement.visible, true);
+  assert.ok(label.x + placement.xOffset - label.width / 2 >= 8);
+  assert.equal(label.width, 210);
+});
+test('unselected overview titles can fit a short mobile map without shrinking', () => {
+  const label = { id: 'mobile-film', x: 195, y: 159, width: 210, height: 135, selected: false };
+  const placement = placeTitleLabels([label], 390, 319).get(label.id);
+  assert.equal(placement.visible, true);
+  assert.ok(label.y + placement.offset >= 8);
+  assert.ok(label.y + placement.offset + label.height <= 311);
 });

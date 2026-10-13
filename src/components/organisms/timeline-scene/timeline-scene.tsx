@@ -7,6 +7,7 @@ import { ToneMappingMode } from 'postprocessing';
 import { Component, useMemo, useRef, useState, type ReactNode, type RefObject } from 'react';
 import { Color, NoToneMapping, PointLight } from 'three';
 import { PointerFluid } from './pointer-fluid';
+import { TitleLabelLayout } from './title-label-layout';
 import { CameraRig } from './camera-rig';
 import { SceneEnvironment } from './environment';
 import { SceneSettingsContext, useSceneSettings } from '@/hooks/scene-settings';
@@ -53,13 +54,13 @@ function Graph({ graph, selectedId, onSelect, zoom, portal, reducedMotion }: {
   const illuminatedEdges = useMemo(() => selectionConnections(graph, selectedId), [graph, selectedId]);
   const headingSize = Math.max(8, Math.min(13, zoom * 20));
   const headingOffset = Math.max(3, (headingSize * 1.1 + 6) / (PIXELS_PER_UNIT * zoom));
-  const branchSources = useMemo(() => new Set(graph.connections.filter(edge => edge.type === 'branch').map(edge => edge.sourceId)), [graph]);
   return <group>
     {graph.layout.rows.map(({ row, y }) => <group key={row.id}>
       <Html portal={portal} position={[graph.layout.bounds.min[0], y + headingOffset, 0]} className="lane-label" zIndexRange={[5, 0]} style={{ pointerEvents: 'none', fontSize: headingSize, lineHeight: 1.1 }}><span>{row.name}</span></Html>
     </group>)}
     {graph.connections.map(edge => <TimelineConnection key={edge.id} edge={edge} illuminated={illuminatedEdges.has(edge.id)} selectedId={selectedId} graph={graph} reducedMotion={reducedMotion} />)}
-    {graph.layout.nodes.map(item => <TimelineNodeView key={item.node.id} item={item} selected={item.node.id === selectedId} showLabel={branchSources.has(item.node.id)}
+    <TitleLabelLayout graph={graph} portal={portal} />
+    {graph.layout.nodes.map(item => <TimelineNodeView key={item.node.id} item={item} selected={item.node.id === selectedId}
       onSelect={onSelect} zoom={zoom} portal={portal} reducedMotion={reducedMotion} />)}
   </group>;
 }

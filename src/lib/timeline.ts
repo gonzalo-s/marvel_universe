@@ -29,7 +29,7 @@ export function resolveGraph(data: TimelineData) {
   const stackSpacing = 8;
   const eventOffset = 8;
   const rowSpacing = (maxWorks - 1) * stackSpacing + eventOffset + (maxEvents - 1) * stackSpacing + 12;
-  const layout = layoutTimeline(data, { columnSpacing: 9, rowSpacing });
+  const layout = layoutTimeline(data, { columnSpacing: 12, rowSpacing });
   const nodes = new Map(layout.nodes.map(item => [item.node.id, item]));
   const rows = new Map(layout.rows.map(item => [item.row.id, item]));
   const cells = new Map<string, typeof layout.nodes>();

@@ -162,3 +162,7 @@ h1 { font-weight: 600; letter-spacing: .02em; }
 .event-label-card.compact:not(.selected) span { padding: 4px 5px; background: rgba(8,11,20,.45); border-color: transparent; }
 .event-label-card.compact:not(.selected) small { display: none; }
 .event-label-card.compact:not(.selected) .timeline-title-artwork { height: 34px; }
+
+.work-label.is-staggered::before { content:''; position:absolute; left:calc(50% + var(--title-leader-x, 0px)); width:1px; height:var(--title-leader-length); background:#9ab9d366; pointer-events:none; }
+.work-label.is-staggered[data-label-side=below]::before { bottom:100%; }
+.work-label.is-staggered[data-label-side=above]::before { top:100%; }
