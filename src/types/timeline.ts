@@ -44,7 +44,7 @@ export interface TimelineNode {
   description?: string;
   workId?: string;
   releaseYear?: number;
-  /** Displayed story period; ranges/approximations need not equal the layout anchor. */
+  /** Only dates explicitly established in the story. Omit when unverified or inferred. */
   storyPeriod?: string;
   tmdb?: TmdbReference;
   theme?: NodeTheme;

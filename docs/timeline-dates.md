@@ -1,37 +1,36 @@
-# Film date audit — 2026-10-13
+# Explicit story dates — 2026-10-13
 
-The 38 film nodes distinguish `releaseYear` (the theatrical release),
-`storyPeriod` (the label shown to readers), and `position.year` (the grid anchor).
-A film may cover several years, flashbacks, post-credit scenes, or other universes.
-The grid anchor must not be presented as the date of every scene.
+Only `storyPeriod` supplies a visible story date. Missing metadata means no date
+caption, panel date, or date in the marker's accessible name. Neither a release
+year nor a grid anchor fills that gap. Dates derived from chronology books,
+approximate placements, or arithmetic on time jumps are omitted.
 
-The existing release years and principal-story grid anchors were retained after
-review. Corrections affect descriptions and the displayed story period:
+The current film entries retain these verified on-screen dates:
 
-- Iron Man uses 2008 under the 2023 official chronology, rather than a 2008–2010 range.
-- Iron Man 2, The Incredible Hulk, and Thor share Fury’s Big Week in 2010 under
-  that chronology; older references used 2011. Their layout order is editorial.
-- Iron Man 3 uses Christmas 2013 with its ending in early 2014, replacing the
-  old 2012–2013 description. Its 1999 prologue is outside the principal period.
-- First Avenger and Doctor Strange display their multi-year main-story ranges.
-- Endgame distinguishes its 2018 opening from the principal 2023 story.
-- Wakanda Forever distinguishes the 2024 opening from the main 2025 conflict.
-- Phase Five/late Phase Six dates remain approximate where the grid uses an
-  editorial estimate. Thunderbolts' later epilogue is not assigned to 2027.
-- Fantastic Four displays “Década de 1960 · otro universo”; its 1964 anchor
-  does not assert that every scene happens in that year.
-- Deadpool keeps its separate continuity and approximate opening-year anchor;
-  Disney+ watch-order placement is not proof of synchronised calendar years.
-- Brand New Day was released theatrically on July 31, 2026. Its story takes
-  place four years after No Way Home, in 2028; the label now states that story
-  year directly rather than implying an unreleased film or provisional release.
+| Film | Displayed date | Evidence and scope |
+| --- | --- | --- |
+| Iron Man 3 | 23 December 2013 | The Daily Times newspaper in the Rose Hill segment; not every scene. |
+| Captain America: Brave New World | 16 April 2027 | White House summit invitation; not every scene. |
+| The Fantastic Four: First Steps | 1964 | MCMLXIV in the opening; later time jumps are not compressed into this date. |
 
-References:
+The visited-past event nodes in Endgame retain the explicit 1970, 2012, 2013,
+and 2014 context dates. Undated events have no caption derived from the grid.
 
-- [Marvel Studios official timeline book and preview](https://www.marvel.com/articles/culture-lifestyle/mcu-the-marvel-cinematic-universe-an-official-timeline-available-now)
-- [Detailed summary of the official chronology and conflicting older dates](https://en.wikipedia.org/wiki/Marvel_Cinematic_Universe_timeline)
-- [Marvel's Fantastic Four synopsis](https://www.marvel.com/movies/fantastic-four)
+This is a conservative verified subset. Omitting a date means that this dataset
+has no verified explicit evidence for its displayed period, not that the film
+cannot contain a dated prop or dialogue. New dates require scene evidence.
+
+Brand New Day remains released in 2026. Its explicit four-year interval after
+No Way Home stays in the description; the calculated 2028 story caption is removed.
+Other films also lose book-derived or estimated absolute years from descriptions.
+
+`position.year` is an internal layout anchor, retained to preserve ordering,
+connections, and scrolling. It is not exposed as a story date. `releaseYear`
+continues to identify the theatrical release and powers TMDB lookup.
+
+Evidence references:
+
+- [Iron Man 3 newspaper date](https://fictionempire.com/index.php?cat=21st+Century%3A+10s&group=Dates&sub_cat=Headlines)
+- [Brave New World on-screen invitation](https://movies.stackexchange.com/questions/124771/is-there-any-deeper-significance-to-the-april-16-2027-date-shown-in-captain-ame)
+- [Fantastic Four opening date discussion](https://mcuchronological.wordpress.com/2025/11/14/part-73-the-fantastic-four-first-steps/)
 - [Sony's Brand New Day synopsis](https://www.sonypictures.com/movies/spidermanbrandnewday)
-
-Story periods describe the principal narrative, not every flashback or credit scene.
-No connection or universe relationship was changed by this audit.

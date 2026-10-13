@@ -50,7 +50,7 @@ export function TimelineNodeView({
         zIndexRange={[20, 10]}
       >
         <NodeMarker
-          label={`${node.title}. ${storyTime(node)}`}
+          label={[node.title, storyTime(node)].filter(Boolean).join(". ")}
           selected={selected}
           color={primary}
           scale={scale}
@@ -86,7 +86,7 @@ export function TimelineNodeView({
               onFocus={() => hover(node.id, true)} onBlur={() => hover(node.id, false)}>
               <TitleArtwork node={node} />
             </Button>}
-            <small>{compact ? node.position.year : storyTime(node)}</small>
+            {storyTime(node) && <small>{storyTime(node)}</small>}
           </div>
         </Html>
       )}

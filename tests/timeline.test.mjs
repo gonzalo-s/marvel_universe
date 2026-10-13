@@ -340,18 +340,20 @@ test('hovering a visible title retains its slot so the clickable target does not
   assert.equal(placeTitleLabels([label], 1000, 700).get(label.id).offset, -130);
 });
 
-test('film story periods distinguish ranges and estimates from release years and anchors', () => {
+test('story dates only render explicit metadata and never fall back to layout or release years', () => {
   const { storyTime } = require(join(process.env.TIMELINE_CHECK_DIR, 'lib/timeline.js'));
   const byId = id => timeline.nodes.find(node => node.id === `film-event-${id}`);
-  assert.equal(byId('iron-man-3').storyPeriod, '2013–2014');
-  assert.equal(byId('doctor-strange').storyPeriod, '2016–2017');
-  assert.equal(byId('endgame').releaseYear, 2019);
-  assert.equal(byId('endgame').position.year, 2023);
-  assert.equal(storyTime(byId('endgame')), 'Historia: 2018 → 2023');
+  assert.equal(storyTime(byId('iron-man-3')), 'Historia: 23 de diciembre de 2013');
+  assert.equal(storyTime(byId('brave-new-world')), 'Historia: 16 de abril de 2027');
+  assert.equal(storyTime(byId('fantastic-four-first-steps')), 'Historia: 1964');
+  for (const id of ['iron-man', 'thor', 'doctor-strange', 'endgame', 'brand-new-day', 'quantumania', 'thunderbolts']) {
+    assert.equal(storyTime(byId(id)), null);
+    assert.equal(byId(id).storyPeriod, undefined);
+  }
   assert.equal(byId('brand-new-day').releaseYear, 2026);
-  assert.equal(storyTime(byId('brand-new-day')), 'Historia: 2028');
-  assert.match(storyTime(byId('fantastic-four-first-steps')), /otro universo/);
-  assert.ok(timeline.nodes.filter(node => node.kind === 'work').every(node => node.storyPeriod));
+  assert.equal(byId('brand-new-day').position.year, 2028);
+  assert.equal(storyTime(timeline.nodes.find(node => node.id === 'tva-arrival')), null);
+  assert.equal(storyTime(timeline.nodes.find(node => node.id === 'camp-1970')), 'Historia: 1970');
 });
 test('story periods reject empty and non-string values', () => {
   for (const value of ['', '  ', 2023]) {

@@ -102,4 +102,4 @@ Film title artwork stays enabled at all zoom levels and grows up to 35% larger i
 
 Click a film title image (or its text fallback) to select it and fit a view containing the film and up to two neighboring works on the same visible timeline. Focus adapts to the available map width/height and works with Enter/Space; ordinary event selection retains its current zoom.
 
-Film dates distinguish the release year from the story period. `storyPeriod` supplies readable ranges and approximation markers independently of the grid's `position.year`; both the title caption and selection panel use it. See [the date audit](docs/timeline-dates.md) for corrections, sources, and inferred dates.
+Only explicitly established story dates are displayed. `storyPeriod` is omitted for inferred or unverified dates, and captions, accessibility labels, and the selection panel never fall back to `position.year`. Grid anchors retain the reading order; theatrical release years remain separate. See [the date policy](docs/timeline-dates.md) for evidence and scope.

@@ -63,6 +63,5 @@ export function resolveGraph(data: TimelineData) {
 }
 export type ResolvedGraph = ReturnType<typeof resolveGraph>;
 export function storyTime(node: TimelineNode) {
-  if (node.kind === 'work') return `Historia: ${node.storyPeriod ?? node.position.year}`;
-  return `Ancla visual: ${node.position.year}`;
+  return node.storyPeriod ? `Historia: ${node.storyPeriod}` : null;
 }

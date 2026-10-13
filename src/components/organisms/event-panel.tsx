@@ -19,7 +19,7 @@ export function EventPanel({ node, graph, onClose, onSelect, onOverview }: {
     <div aria-live="polite">
       <p className="eyebrow">{node.kind === 'work' ? 'Obra seleccionada' : 'Evento seleccionado'}</p><h2>{node.title}</h2>
       <SelectedArtwork key={node.id} nodeId={node.id} />
-      <p className="time-tag">{storyTime(node)}</p><p className="muted">{row.name}</p><p>{row.description}</p><p>{node.description}</p>
+      {storyTime(node) && <p className="time-tag">{storyTime(node)}</p>}<p className="muted">{row.name}</p><p>{row.description}</p><p>{node.description}</p>
       {node.workId && <div className="work"><strong>Obra: {node.workId}</strong>{node.releaseYear !== undefined && <span>Año de estreno: {node.releaseYear}</span>}</div>}
       <Button className="overview-button" onClick={onOverview}>Volver a la vista general</Button>
       {incoming.length > 0 && <><h3>Conexiones entrantes</h3><ul className="event-links">{incoming.map((edge, i) => <li key={i}><Button onClick={() => onSelect(edge.sourceId)}>{graph.nodes.get(edge.sourceId)!.node.title}</Button><small>{edgeNames[edge.type]}{edge.label && ` · ${edge.label}`}</small></li>)}</ul></>}
