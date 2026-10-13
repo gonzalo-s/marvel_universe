@@ -348,7 +348,8 @@ test('film story periods distinguish ranges and estimates from release years and
   assert.equal(byId('endgame').releaseYear, 2019);
   assert.equal(byId('endgame').position.year, 2023);
   assert.equal(storyTime(byId('endgame')), 'Historia: 2018 → 2023');
-  assert.match(storyTime(byId('brand-new-day')), /inferido/);
+  assert.equal(byId('brand-new-day').releaseYear, 2026);
+  assert.equal(storyTime(byId('brand-new-day')), 'Historia: 2028');
   assert.match(storyTime(byId('fantastic-four-first-steps')), /otro universo/);
   assert.ok(timeline.nodes.filter(node => node.kind === 'work').every(node => node.storyPeriod));
 });

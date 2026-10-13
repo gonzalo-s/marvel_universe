@@ -1784,10 +1784,10 @@ export const timeline = {
       "id": "film-event-brand-new-day",
       "kind": "work",
       "title": "Spider-Man: Brand New Day",
-      "description": "Peter continúa su vida como Spider-Man después del hechizo que hizo olvidar su identidad. La sinopsis oficial sitúa el relato cuatro años después de No Way Home; 2028 es el ancla inferida a partir de 2024.",
+      "description": "Peter continúa su vida como Spider-Man cuatro años después de No Way Home, en 2028 dentro de la historia. La película se estrenó en cines el 31 de julio de 2026; el año narrativo y el de estreno son distintos.",
       "workId": "brand-new-day",
       "releaseYear": 2026,
-      "storyPeriod": "≈ 2028 · inferido",
+      "storyPeriod": "2028",
       "position": {
         "year": 2028,
         "order": 100,

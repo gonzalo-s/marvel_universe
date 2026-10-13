@@ -22,8 +22,9 @@ review. Corrections affect descriptions and the displayed story period:
   does not assert that every scene happens in that year.
 - Deadpool keeps its separate continuity and approximate opening-year anchor;
   Disney+ watch-order placement is not proof of synchronised calendar years.
-- Brand New Day's 2028 remains explicitly inferred from No Way Home's 2024 and
-  Sony's four-year interval. It is not presented as an independently verified date.
+- Brand New Day was released theatrically on July 31, 2026. Its story takes
+  place four years after No Way Home, in 2028; the label now states that story
+  year directly rather than implying an unreleased film or provisional release.
 
 References:
 
