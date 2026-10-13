@@ -8,7 +8,7 @@ import type { TimelineNode } from '@/types/timeline';
 export function TitleArtwork({ node }: { node: TimelineNode }) {
   const { element, logo, showLogo, loaded, markLoaded, markFailed } = useTitleArtwork(node);
   return <span ref={element} className="timeline-title">
-    {showLogo && <MediaImage variant="title" src={logo!} alt={node.title}
+    {showLogo && <MediaImage variant="title" src={logo!} alt={node.title} draggable={false}
       className={`timeline-title-artwork ${loaded ? '' : 'is-loading'}`} onLoad={markLoaded} onError={markFailed} />}
     {(!showLogo || !loaded) && node.title}
   </span>;

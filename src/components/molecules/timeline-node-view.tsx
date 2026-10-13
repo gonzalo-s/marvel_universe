@@ -79,6 +79,7 @@ export function TimelineNodeView({
             }}
           >
             {compact ? <TitleArtwork node={node} /> : <Button className="film-title-button"
+              style={{ pointerEvents: "auto", cursor: "pointer" }}
               aria-label={`Ver ${node.title} y películas cercanas`} aria-pressed={selected}
               onClick={() => onFocusFilm(node.id)}
               onPointerEnter={() => hover(node.id, true)} onPointerLeave={() => hover(node.id, false)}
