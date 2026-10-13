@@ -79,7 +79,7 @@ References: [TMDB application authentication](https://developer.themoviedb.org/d
 
 ## Scene appearance
 
-The scene uses the Claro appearance with fog density **0.1** and depth **2.8**. The fixed settings live in `src/types/scene-settings.ts`; there is no configurator. Environmental animation is off, with automatic quality selection.
+The scene uses the Claro appearance with fog density **0.1** and depth **2.8**. The fixed settings live in `src/types/scene-settings.ts`; there is no configurator. Scene animation is enabled, with automatic quality selection and respect for the operating system's reduced-motion preference.
 
 Selecting an event lights its complete existing connection route to its associated work, including intermediate event segments. If no associated work is reachable, the nearest connected work is highlighted. Routes stop at work nodes, respect the current filter and never invent connections. Selection remains highlighted while hovering elsewhere.
 
