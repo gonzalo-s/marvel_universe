@@ -18,7 +18,7 @@ const TimelineScene = dynamic(() => import('@/components/organisms/timeline-scen
 
 export default function TimelineExplorer({ data }: { data: TimelineData }) {
   const { graph, fullGraph, selectedId, zoom, query, results, rowId, kindFilter, scene, scroller, navigation, scrolling, reducedMotion,
-    reset, jumpTo, select, selectSearch, changeRow, changeKind, setQuery, closeSelection, startDrag, moveDrag, endDrag, cancelDrag, scroll } = useTimelineExplorer(data);
+    reset, jumpTo, select, focusFilm, selectSearch, changeRow, changeKind, setQuery, closeSelection, startDrag, moveDrag, endDrag, cancelDrag, scroll } = useTimelineExplorer(data);
   return <TimelineLayout
     header={<ExplorerHeader zoom={zoom} onReset={reset} />}
     toolbar={<ExplorerToolbar graph={graph} query={query} results={results} kindFilter={kindFilter} rowId={rowId}
@@ -26,7 +26,7 @@ export default function TimelineExplorer({ data }: { data: TimelineData }) {
     scene={<section className="scene" aria-label="Mapa de eventos">
       <div className="scene-window" ref={scene} onPointerDown={startDrag} onPointerMove={moveDrag} onPointerUp={endDrag} onPointerCancel={endDrag} onLostPointerCapture={cancelDrag}>
         {graph.nodes.size === 0 && <p className="filter-empty" role="status">No hay nodos de este tipo.</p>}
-        <TimelineScene settings={sceneSettings} graph={graph} selectedId={selectedId} onSelect={select} navigation={navigation} zoom={zoom} reducedMotion={reducedMotion}
+        <TimelineScene settings={sceneSettings} graph={graph} selectedId={selectedId} onSelect={select} onFocusFilm={focusFilm} navigation={navigation} zoom={zoom} reducedMotion={reducedMotion}
           fallback={<TimelineFallback graph={graph} onSelect={select} />} />
       </div>
       <Minimap graph={graph} navigation={navigation} zoom={zoom} scene={scene} selectedId={selectedId} onJump={jumpTo} />

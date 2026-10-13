@@ -10,7 +10,7 @@ const directory = mkdtempSync(join(tmpdir(), 'marvel-timeline-'));
 try {
   const compiled = spawnSync(process.execPath, ['node_modules/typescript/bin/tsc',
     '--outDir', directory, '--module', 'commonjs', '--target', 'es2020',
-    '--strict', '--skipLibCheck', 'src/data/timeline.ts', 'src/lib/timeline.ts', 'src/lib/camera.ts', 'src/lib/titleLabels.ts', 'src/lib/filterGraph.ts', 'src/lib/selectionConnections.ts', 'src/services/tmdb/client.ts', 'src/services/tmdb/artwork-client.ts'], { stdio: 'inherit' });
+    '--strict', '--skipLibCheck', 'src/data/timeline.ts', 'src/lib/timeline.ts', 'src/lib/camera.ts', 'src/lib/titleLabels.ts', 'src/lib/filmFocus.ts', 'src/lib/filterGraph.ts', 'src/lib/selectionConnections.ts', 'src/services/tmdb/client.ts', 'src/services/tmdb/artwork-client.ts'], { stdio: 'inherit' });
   if (compiled.status !== 0) process.exitCode = compiled.status ?? 1;
   else {
     const require = createRequire(import.meta.url);

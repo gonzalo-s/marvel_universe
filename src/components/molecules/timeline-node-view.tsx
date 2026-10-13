@@ -2,6 +2,7 @@
 
 import { Html } from "@react-three/drei";
 import type { RefObject } from "react";
+import { Button } from "@/components/atoms/button";
 import { NodeMarker } from "@/components/atoms/node-marker";
 import { NodeBody } from "./node-body";
 import { useSceneActivity } from "@/hooks/scene-activity";
@@ -16,6 +17,7 @@ export function TimelineNodeView({
   item,
   selected,
   onSelect,
+  onFocusFilm,
   zoom,
   portal,
   reducedMotion,
@@ -23,6 +25,7 @@ export function TimelineNodeView({
   item: PositionedNode;
   selected: boolean;
   onSelect: (id: string) => void;
+  onFocusFilm: (id: string) => void;
   zoom: number;
   portal: RefObject<HTMLDivElement>;
   reducedMotion: boolean;
@@ -75,7 +78,13 @@ export function TimelineNodeView({
               top: compact ? (selected ? 30 : 30 * scale) : 30,
             }}
           >
-            <TitleArtwork node={node} />
+            {compact ? <TitleArtwork node={node} /> : <Button className="film-title-button"
+              aria-label={`Ver ${node.title} y películas cercanas`} aria-pressed={selected}
+              onClick={() => onFocusFilm(node.id)}
+              onPointerEnter={() => hover(node.id, true)} onPointerLeave={() => hover(node.id, false)}
+              onFocus={() => hover(node.id, true)} onBlur={() => hover(node.id, false)}>
+              <TitleArtwork node={node} />
+            </Button>}
             <small>{node.position.year}</small>
           </div>
         </Html>

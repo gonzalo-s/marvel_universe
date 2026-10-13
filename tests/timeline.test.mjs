@@ -335,3 +335,7 @@ test('unselected overview titles can fit a short mobile map without shrinking', 
   assert.ok(label.y + placement.offset >= 8);
   assert.ok(label.y + placement.offset + label.height <= 311);
 });
+test('hovering a visible title retains its slot so the clickable target does not jump', () => {
+  const label = { id: 'hovered', x: 400, y: 300, width: 210, height: 100, selected: false, hovered: true, preferredOffset: -130 };
+  assert.equal(placeTitleLabels([label], 1000, 700).get(label.id).offset, -130);
+});

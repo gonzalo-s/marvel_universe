@@ -25,7 +25,8 @@ export function TitleLabelLayout({ graph, portal }: { graph: ResolvedGraph; port
       point.current.set(item.position[0], item.position[1], depthOf(item.node.id, item.node.kind, settings.depth) + .2).project(camera);
       const scale = Number(element.dataset.labelScale);
       labels.push({ id: item.node.id, x: (point.current.x + 1) * size.width / 2, y: (1 - point.current.y) * size.height / 2,
-        width: element.offsetWidth * scale, height: element.offsetHeight * scale, selected: element.classList.contains('selected'), hovered: hovered() === item.node.id });
+        width: element.offsetWidth * scale, height: element.offsetHeight * scale, selected: element.classList.contains('selected'), hovered: hovered() === item.node.id,
+        preferredOffset: hovered() === item.node.id && element.style.visibility === 'visible' ? Number.parseFloat(element.style.top) : undefined });
     }
     const reserved = [...portal.current.querySelectorAll<HTMLElement>('.event-label-card.compact.selected')].map(element => {
       const rect = element.getBoundingClientRect(), root = portal.current.getBoundingClientRect();

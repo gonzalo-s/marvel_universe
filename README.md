@@ -99,3 +99,5 @@ Reduced-motion and touch-only devices skip simulation allocation. Quality follow
 Reference: [official GLSL overlay example](https://github.com/artcodev/three-fluid-fx/blob/main/examples/glsl/minimal/overlay/main.ts), [integration guide](https://three-fluid-fx.artcreativecode.com/tutorials/getting-started/).
 
 Film title artwork stays enabled at all zoom levels and grows up to 35% larger in the overview. Labels stagger into nearby free vertical slots with a twelve-pixel gap; when space is exhausted, selection and hover take priority and colliding titles are temporarily hidden. Film columns are twelve world units apart, and filtering preserves their positions.
+
+Click a film title image (or its text fallback) to select it and fit a view containing the film and up to two neighboring works on the same visible timeline. Focus adapts to the available map width/height and works with Enter/Space; ordinary event selection retains its current zoom.

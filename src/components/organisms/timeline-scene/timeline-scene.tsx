@@ -48,8 +48,8 @@ function RimLight({ graph, selectedId }: { graph: ResolvedGraph; selectedId: str
   return <pointLight ref={light} intensity={0} distance={14} decay={2} />;
 }
 
-function Graph({ graph, selectedId, onSelect, zoom, portal, reducedMotion }: {
-  graph: ResolvedGraph; selectedId: string | null; onSelect: (id: string) => void; zoom: number; portal: RefObject<HTMLDivElement>; reducedMotion: boolean;
+function Graph({ graph, selectedId, onSelect, onFocusFilm, zoom, portal, reducedMotion }: {
+  graph: ResolvedGraph; selectedId: string | null; onSelect: (id: string) => void; onFocusFilm: (id: string) => void; zoom: number; portal: RefObject<HTMLDivElement>; reducedMotion: boolean;
 }) {
   const illuminatedEdges = useMemo(() => selectionConnections(graph, selectedId), [graph, selectedId]);
   const headingSize = Math.max(8, Math.min(13, zoom * 20));
@@ -61,12 +61,12 @@ function Graph({ graph, selectedId, onSelect, zoom, portal, reducedMotion }: {
     {graph.connections.map(edge => <TimelineConnection key={edge.id} edge={edge} illuminated={illuminatedEdges.has(edge.id)} selectedId={selectedId} graph={graph} reducedMotion={reducedMotion} />)}
     <TitleLabelLayout graph={graph} portal={portal} />
     {graph.layout.nodes.map(item => <TimelineNodeView key={item.node.id} item={item} selected={item.node.id === selectedId}
-      onSelect={onSelect} zoom={zoom} portal={portal} reducedMotion={reducedMotion} />)}
+      onSelect={onSelect} onFocusFilm={onFocusFilm} zoom={zoom} portal={portal} reducedMotion={reducedMotion} />)}
   </group>;
 }
 
-export default function TimelineScene({ graph, selectedId, onSelect, navigation, zoom, reducedMotion, fallback, settings }: {
-  settings: SceneSettings;
+export default function TimelineScene({ graph, selectedId, onSelect, navigation, zoom, reducedMotion, fallback, settings, onFocusFilm }: {
+  settings: SceneSettings; onFocusFilm: (id: string) => void;
   graph: ResolvedGraph; selectedId: string | null; onSelect: (id: string) => void;
   navigation: RefObject<Navigation>; zoom: number; reducedMotion: boolean; fallback: ReactNode;
 }) {
@@ -87,7 +87,7 @@ export default function TimelineScene({ graph, selectedId, onSelect, navigation,
         <SceneEnvironment graph={graph} tier={quality} reducedMotion={still} />
         <CameraRig graph={graph} navigation={navigation} zoom={zoom} reducedMotion={still} />
         <RimLight graph={graph} selectedId={selectedId} />
-        <Graph graph={graph} selectedId={selectedId} onSelect={onSelect} zoom={zoom} portal={portal} reducedMotion={still} />
+        <Graph graph={graph} selectedId={selectedId} onSelect={onSelect} onFocusFilm={onFocusFilm} zoom={zoom} portal={portal} reducedMotion={still} />
         <EffectComposer multisampling={t.multisampling}>
           <PointerFluid graph={graph} selectedId={selectedId} reducedMotion={reducedMotion} tier={quality} />
           <Bloom mipmapBlur luminanceThreshold={presentation.bloom.threshold} intensity={settings.bloom} radius={presentation.bloom.radius} />

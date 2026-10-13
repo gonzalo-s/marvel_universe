@@ -55,3 +55,33 @@ test('a small or empty graph still has valid navigation', () => {
   assert.equal(scroll.contentWidth, 1120);
   assert.ok(Number.isFinite(scroll.targetAt(0)));
 });
+
+const { filmFocus } = require(join(process.env.TIMELINE_CHECK_DIR, 'lib/filmFocus.js'));
+const { resolveGraph } = require(join(process.env.TIMELINE_CHECK_DIR, 'lib/timeline.js'));
+const { filterGraph } = require(join(process.env.TIMELINE_CHECK_DIR, 'lib/filterGraph.js'));
+const filmGraph = () => resolveGraph({ rows: [{ id: 0, name: 'Main' }, { id: 5, name: 'Independent' }], nodes: [
+  ...Array.from({ length: 5 }, (_, i) => ({ id: `film-${i}`, kind: 'work', title: `Film ${i}`, position: { year: 2000 + i, order: 0, row: 0 }, connections: [] })),
+  { id: 'other-universe', kind: 'work', title: 'Other', position: { year: 2002, order: 0, row: 5 }, connections: [] },
+  { id: 'event', kind: 'event', title: 'Event', position: { year: 2002, order: 0, row: 0 }, connections: [] },
+] });
+test('film focus selects the previous/next works from the same timeline', () => {
+  const graph = filmGraph(), focus = filmFocus(graph, 'film-2', 1120, 670);
+  assert.deepEqual(focus.ids, ['film-1', 'film-2', 'film-3']);
+  assert.ok(focus.zoom > .1 && focus.zoom <= .85);
+  for (const id of focus.ids) assert.ok(Math.abs(graph.nodes.get(id).position[0] - focus.targetX) * PIXELS_PER_UNIT * focus.zoom < 1120 / 2);
+});
+test('film focus adapts to mobile width and keeps context at timeline ends', () => {
+  const graph = filmGraph();
+  assert.deepEqual(filmFocus(graph, 'film-0', 1120, 670).ids, ['film-0', 'film-1', 'film-2']);
+  assert.deepEqual(filmFocus(graph, 'film-4', 1120, 670).ids, ['film-2', 'film-3', 'film-4']);
+  const mobile = filmFocus(graph, 'film-2', 390, 319);
+  assert.ok(mobile.zoom < filmFocus(graph, 'film-2', 1120, 670).zoom);
+  for (const id of mobile.ids) assert.ok(Math.abs(graph.nodes.get(id).position[0] - mobile.targetX) * PIXELS_PER_UNIT * mobile.zoom < 390 / 2);
+});
+test('film focus handles a lone film and rejects hidden works/events', () => {
+  const graph = filmGraph();
+  assert.deepEqual(filmFocus(graph, 'other-universe', 390, 319).ids, ['other-universe']);
+  assert.equal(filmFocus(graph, 'missing', 390, 319), null);
+  assert.equal(filmFocus(graph, 'event', 390, 319), null);
+  assert.equal(filmFocus(filterGraph(graph, 'event'), 'film-2', 390, 319), null);
+});

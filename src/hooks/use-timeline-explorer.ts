@@ -4,6 +4,7 @@ import { useEffect, useLayoutEffect, useMemo, useRef, useState, type PointerEven
 import { resolveGraph } from '@/lib/timeline';
 import { horizontalNavigation, MIN_ZOOM, MAX_ZOOM, PIXELS_PER_UNIT } from '@/lib/camera';
 import type { TimelineData } from '@/types/timeline';
+import { filmFocus } from '@/lib/filmFocus';
 import { filterGraph, type NodeFilter } from '@/lib/filterGraph';
 import type { Navigation } from '@/types/navigation';
 
@@ -14,6 +15,8 @@ export function useTimelineExplorer(data: TimelineData) {
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [zoom, setZoom] = useState(1);
   const zoomValue = useRef(1);
+  const pendingFocus = useRef<{ targetX: number; targetY: number } | null>(null);
+  const [focusRevision, setFocusRevision] = useState(0);
   const [query, setQuery] = useState('');
   const [rowId, setRowId] = useState(data.rows[0].id);
   const [sceneWidth, setSceneWidth] = useState(0);
@@ -44,12 +47,15 @@ export function useTimelineExplorer(data: TimelineData) {
     zoomValue.current = zoom;
     if (!sceneWidth || !scroller.current) return;
     // Preserve the world point at the center while zooming/resizing.
-    const offset = initialized.current ? scrolling.offsetAt(navigation.current.targetX) : 0;
+    const focus = pendingFocus.current;
+    const offset = initialized.current ? scrolling.offsetAt(focus?.targetX ?? navigation.current.targetX) : 0;
     scroller.current.scrollLeft = offset;
     navigation.current.targetX = scrolling.targetAt(scroller.current.scrollLeft);
+    if (focus) navigation.current.targetY = focus.targetY;
+    pendingFocus.current = null;
     navigation.current.revision += 1;
     initialized.current = true;
-  }, [sceneWidth, scrolling, zoom]);
+  }, [sceneWidth, scrolling, zoom, focusRevision]);
 
   useEffect(() => {
     const frame = scene.current!;
@@ -106,6 +112,17 @@ export function useTimelineExplorer(data: TimelineData) {
       scroller.current.scrollLeft = scrolling.offsetAt(item.position[0]);
       navigation.current.targetX = scrolling.targetAt(scroller.current.scrollLeft);
     }
+  }
+
+  function focusFilm(id: string) {
+    const target = filmFocus(graph, id, scene.current?.clientWidth ?? sceneWidth, scene.current?.clientHeight ?? 600);
+    const item = graph.nodes.get(id);
+    if (!target || !item) return;
+    setSelectedId(id); setRowId(item.node.position.row); setQuery('');
+    zoomValue.current = target.zoom;
+    pendingFocus.current = { targetX: target.targetX, targetY: target.targetY };
+    setFocusRevision(value => value + 1);
+    setZoom(target.zoom);
   }
 
   function selectSearch(event: MouseEvent<HTMLButtonElement>) {
@@ -181,7 +198,7 @@ export function useTimelineExplorer(data: TimelineData) {
   }
 
   return { fullGraph, graph, kindFilter, selectedId, zoom, query, rowId, reducedMotion, scene, scroller, navigation, scrolling,
-    results, reset, jumpTo, select, selectSearch, changeRow, changeKind, startDrag, moveDrag, endDrag,
+    results, reset, jumpTo, select, focusFilm, selectSearch, changeRow, changeKind, startDrag, moveDrag, endDrag,
     setQuery, closeSelection: () => setSelectedId(null), cancelDrag: () => { drag.current = null; },
-    scroll: (offset: number) => { navigation.current.targetX = scrolling.targetAt(offset); } };
+    scroll: (offset: number) => { if (!pendingFocus.current) navigation.current.targetX = scrolling.targetAt(offset); } };
 }

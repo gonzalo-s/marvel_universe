@@ -1,5 +1,5 @@
 export interface TitleLabel {
-  id: string; x: number; y: number; width: number; height: number; selected: boolean; hovered?: boolean;
+  id: string; x: number; y: number; width: number; height: number; selected: boolean; hovered?: boolean; preferredOffset?: number;
 }
 export interface LabelPlacement { visible: boolean; offset: number; xOffset: number }
 interface Rect { left: number; right: number; top: number; bottom: number }
@@ -18,6 +18,7 @@ export function placeTitleLabels(labels: TitleLabel[], width: number, height: nu
     }
     const x = Math.max(label.width / 2 + 8, Math.min(width - label.width / 2 - 8, label.x));
     const offsets = [30, -label.height - 30];
+    if (label.preferredOffset !== undefined) offsets.unshift(label.preferredOffset);
     for (let row = 1; row <= 3; row++) offsets.push(30 + row * (label.height + 14), -label.height - 30 - row * (label.height + 14));
     if (label.height <= height - 16) {
       const clamp = (offset: number) => Math.max(8 - label.y, Math.min(offset, height - 8 - label.height - label.y));

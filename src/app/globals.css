@@ -166,3 +166,7 @@ h1 { font-weight: 600; letter-spacing: .02em; }
 .work-label.is-staggered::before { content:''; position:absolute; left:calc(50% + var(--title-leader-x, 0px)); width:1px; height:var(--title-leader-length); background:#9ab9d366; pointer-events:none; }
 .work-label.is-staggered[data-label-side=below]::before { bottom:100%; }
 .work-label.is-staggered[data-label-side=above]::before { top:100%; }
+
+.film-title-button { display:block; width:100%; border:0; padding:0; background:transparent; color:inherit; font:inherit; text-align:inherit; pointer-events:auto; border-radius:8px; }
+.film-title-button:focus-visible { outline:2px solid #b4d4ff; outline-offset:3px; }
+.film-title-button:hover .timeline-title { border-color:#b4d4ff; }
